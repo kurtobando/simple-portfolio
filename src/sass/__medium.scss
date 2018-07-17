@@ -1,2 +1,30 @@
 // 768px to 959px (Tablets)
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+	#about{
+		background-position: 50% 50%;
+    	background-size: cover;
+
+		#my-details{
+			// push my details in the bottom section of "about" div
+			margin-top: 50vh!important;
+			text-align: left;
+
+			#my-social-media {
+				justify-content: left!important;
+
+				li:first-child{
+					// push the Facebook icon more to the left
+					padding-left: 0px;
+				}
+			}
+		}
+	}
+
+	#work{
+		#video-description{
+			// from center to right
+			padding-right: 20px!important;
+			text-align: right;
+		}
+	}
+}

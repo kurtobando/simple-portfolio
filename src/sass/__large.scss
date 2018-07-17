@@ -1,2 +1,13 @@
 // 960px and larger (Desktops)
-@media (min-width: 960px) {}
+@media (min-width: 960px) {
+	#about{
+		#my-details{
+			// push my details in the bottom section of "about" div
+			margin-top: 60vh!important;
+
+			#my-description{
+				padding-right: 300px;
+			}
+		}
+	}
+}
