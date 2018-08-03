@@ -1,7 +1,7 @@
 var gulp        = require('gulp'),
  	gulp_uglify	= require('gulp-uglify'),
  	gulp_sass	= require('gulp-sass'),
-	gulp_csso 	= require('gulp-csso'),
+	gulp_cssmin = require('gulp-cssmin'),
  	gulp_concat	= require('gulp-concat'),
 	gulp_sourcemaps	= require('gulp-sourcemaps'),
 	gulp_imagemin 	= require('gulp-imagemin'),
@@ -54,10 +54,10 @@ gulp.task('build-sass', function(){
 	// compress, source map will be generated
 	gulp.src('src/sass/style.scss')
 		.pipe(gulp_sourcemaps.init())
-		.pipe(gulp_csso())
 		.pipe(gulp_concat('style.css'))
 		.pipe(gulp_sass().on('error', gulp_sass.logError))
 		.pipe(gulp_sourcemaps.write())
+		.pipe(gulp_cssmin())
 		.pipe(gulp.dest('dist/css/'));
 });
 
