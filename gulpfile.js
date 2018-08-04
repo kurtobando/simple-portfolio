@@ -1,7 +1,16 @@
+/*
+gulp-sourcemaps
+- Inline source maps are embedded in the source file.
+- All plugins between sourcemaps.init() and sourcemaps.write() need to have support for gulp-sourcemaps.
+- To write external source map files, pass a path relative to the destination to sourcemaps.write().
+https://www.npmjs.com/package/gulp-sourcemaps
+*/
+
 var gulp        = require('gulp'),
  	gulp_uglify	= require('gulp-uglify'),
  	gulp_sass	= require('gulp-sass'),
 	gulp_cssmin = require('gulp-cssmin'),
+	gulp_rename = require('gulp-rename'),
  	gulp_concat	= require('gulp-concat'),
 	gulp_sourcemaps	= require('gulp-sourcemaps'),
 	gulp_imagemin 	= require('gulp-imagemin'),
@@ -42,22 +51,36 @@ gulp.task('build-js', function(){
 			'src/js/*.js',
 			'node_modules/uikit/vendor/jquery.js',
 			'node_modules/uikit/dist/js/uikit.js'])
-		.pipe(gulp_sourcemaps.init())
+		// .pipe(gulp_sourcemaps.init())
 		.pipe(gulp_uglify())
 		.pipe(gulp_concat('script.js'))
-		.pipe(gulp_sourcemaps.write())
+		// .pipe(gulp_sourcemaps.write())
 		.pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('build-sass', function(){
-	// copy scss to 'dist/css/'
-	// compress, source map will be generated
+	/*
+	- copy scss to 'dist/css/'
+	- source map will be generated
+	- both create non-min and min file of style.scss
+	*/
+
+	// create non-minified
 	gulp.src('src/sass/style.scss')
 		.pipe(gulp_sourcemaps.init())
-		.pipe(gulp_concat('style.css'))
 		.pipe(gulp_sass().on('error', gulp_sass.logError))
-		.pipe(gulp_sourcemaps.write())
+		.pipe(gulp_concat('style.css'))
+		.pipe(gulp_sourcemaps.write('./'))
+		.pipe(gulp.dest('dist/css/'));
+
+	// create minified
+	gulp.src('src/sass/style.scss')
+		.pipe(gulp_sourcemaps.init())
+		.pipe(gulp_sass().on('error', gulp_sass.logError))
+		.pipe(gulp_concat('style.css'))
 		.pipe(gulp_cssmin())
+		.pipe(gulp_rename({suffix: '.min'}))
+		.pipe(gulp_sourcemaps.write('./'))
 		.pipe(gulp.dest('dist/css/'));
 });
 
