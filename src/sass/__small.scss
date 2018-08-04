@@ -1,1 +1,141 @@
 // up to 767px (Phones)
+#about{
+	background-color: #F9F9F9;
+	background-image: url('../images/above-the-fold-bg-image.JPG');
+
+	#menus{
+		@extend .uk-flex;
+		@extend .uk-flex-right;
+		list-style: none;
+		padding-top: 40px;
+
+		li{
+			padding-left: 24px;
+		}
+		li > a{
+			font-family: $font-roboto-slab!important;
+			font-weight: bold;
+			font-size: 18px;
+			text-decoration: none;
+			color: #fff;
+		}
+
+		li > a:hover,
+		li > a.active{
+			color: #fff;
+		}
+	}
+	#my-details{
+		// margin-top: 50vh;
+		margin-top: 10vh;
+		color: #fff;
+		text-align: center;
+
+		#my-name-is-kurt{
+			& > h1{
+				font-family: $font-roboto-slab!important;
+				font-weight: bold;
+				font-size: 36px;
+				color: inherit;
+				margin-bottom: 0px!important;
+			}
+
+			& > p{
+				margin-top: 0px;
+				font-family: $font-roboto-slab;
+				font-weight: lighter;
+				font-size: 24px;
+				line-height: 1;
+			}
+
+			& a{
+			   color: inherit;
+		   }
+		}
+		#my-description{
+			font-family: $font-roboto-slab;
+			font-weight: lighter;
+			font-size: 14px;
+			margin-top: 35px;
+			text-align: inherit;
+		}
+		#my-social-media {
+			@extend .uk-flex;
+			@extend .uk-flex-center;
+			list-style: none;
+			margin: 35px auto 0px auto;
+			padding-left:0px !important;
+
+			& > li{
+				padding: 0px 10px 0px 10px;
+			}
+			& > li > a{
+				color: inherit;
+			}
+		}
+	}
+}
+
+#work {
+	max-width: 1360px!important;
+
+	& > div{
+		@extend .uk-flex;
+		@extend .uk-flex-wrap;
+	}
+
+	#video-description{
+		padding: 100px 10px;
+		text-align: center;
+
+		& h2 {
+			font-family: $font-roboto-slab!important;
+			font-weight: bold;
+			font-size: 24px;
+			color: $color-primary!important;
+		}
+		& p{
+			font-family: $font-roboto-slab;
+			font-weight: 400;
+			font-size: 16px;
+			color: $color-secondary!important;
+			line-height: 0;
+		}
+	}
+}
+
+#contact{
+	background-color: #009ccf;
+	color: #fff;
+
+	& > div{
+		height: 250px;
+	}
+	& h2 {
+		font-family: $font-roboto-slab!important;
+		font-weight: bold;
+		font-size: 24px;
+		color: inherit;
+		margin-bottom: 0px;
+	}
+	& p{
+		font-family: $font-roboto-slab!important;
+		font-size: 18px;
+		margin-top: 0px;
+	}
+
+	#my-social-media{
+		@extend .uk-flex;
+		list-style: none;
+		padding-left: 0px;
+		padding-top: 10px;
+
+		li{
+			@extend .uk-display-inline-block
+		}
+		li > a {
+			color: inherit;
+			margin: 0px 8px;
+		}
+	}
+}

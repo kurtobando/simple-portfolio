@@ -1,7 +1,7 @@
 {
-  "name": "template-using-uikit",
+  "name": "kurtobando",
   "version": "1.0.0",
-  "description": "My template using UIkit as a CSS framework",
+  "description": "kurtobando.com portfolio page",
   "main": "index.js",
   "author": "kurtobando",
   "license": "MIT",
@@ -19,5 +19,6 @@
     "gulp-uglify": "^3.0.0",
     "make-dir": "^1.3.0",
     "uikit": "2.27.2"
-  }
+  },
+  "repository": "https://bitbucket.org/kurtobando/kurtobando.git"
 }
