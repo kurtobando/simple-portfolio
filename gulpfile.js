@@ -1,4 +1,8 @@
 /*
+gulp_uglify
+- Minify JavaScript with UglifyJS3.
+- https://www.npmjs.com/package/gulp-uglify
+
 gulp-sourcemaps
 - Inline source maps are embedded in the source file.
 - All plugins between sourcemaps.init() and sourcemaps.write() need to have support for gulp-sourcemaps.
@@ -45,16 +49,32 @@ gulp.task('build-html', function() {
 });
 
 gulp.task('build-js', function(){
-	// copy custom, JQuery and UIKit js to 'dist/js/'
-	// compress, source map will be generated
+	/*
+	- copy custom, JQuery and UIKit js to 'dist/js/'
+	- source map will be generated
+	- both create non-min and min file of script.js
+	*/
+
+	// create non-minified
+	gulp.src([
+		   'src/js/*.js',
+		   'node_modules/uikit/vendor/jquery.js',
+		   'node_modules/uikit/dist/js/uikit.js'])
+	   .pipe(gulp_sourcemaps.init())
+	   .pipe(gulp_concat('script.js'))
+	   .pipe(gulp_sourcemaps.write('./'))
+	   .pipe(gulp.dest('dist/js/'));
+
+    // create minified
 	gulp.src([
 			'src/js/*.js',
 			'node_modules/uikit/vendor/jquery.js',
 			'node_modules/uikit/dist/js/uikit.js'])
-		// .pipe(gulp_sourcemaps.init())
+		.pipe(gulp_sourcemaps.init())
 		.pipe(gulp_uglify())
 		.pipe(gulp_concat('script.js'))
-		// .pipe(gulp_sourcemaps.write())
+		.pipe(gulp_rename({suffix: '.min'}))
+		.pipe(gulp_sourcemaps.write('./'))
 		.pipe(gulp.dest('dist/js/'));
 });
 
