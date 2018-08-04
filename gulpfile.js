@@ -1,17 +1,51 @@
+'use strict';
+
 /*
+gulp
+- The streaming build system
+- https://yarnpkg.com/en/package/gulp
+
 gulp_uglify
 - Minify JavaScript with UglifyJS3.
 - https://www.npmjs.com/package/gulp-uglify
 
+gulp-sass
+- Sass plugin for Gulp.
+- https://yarnpkg.com/en/package/gulp-sass
+
+gulp-cssmin
+- minify css using gulp.
+- https://yarnpkg.com/en/package/gulp-rename
+
+gulp-rename
+- gulp-rename is a gulp plugin to rename files easily.
+- https://www.npmjs.com/package/gulp-rename
+
+gulp-concat
+- Concatenates files
+- https://yarnpkg.com/en/package/gulp-concat
+
 gulp-htmlmin
 - gulp plugin to minify HTML.
-- https://github.com/jonschlinkert/gulp-htmlmin
+- https://yarnpkg.com/en/package/gulp-htmlmin
 
 gulp-sourcemaps
 - Inline source maps are embedded in the source file.
 - All plugins between sourcemaps.init() and sourcemaps.write() need to have support for gulp-sourcemaps.
 - To write external source map files, pass a path relative to the destination to sourcemaps.write().
-https://www.npmjs.com/package/gulp-sourcemaps
+- https://yarnpkg.com/en/package/gulp-sourcemaps
+
+gulp-imagemin
+- Minify PNG, JPEG, GIF and SVG images with imagemin
+- https://yarnpkg.com/en/package/gulp-imagemin
+
+make-dir
+- Make a directory and its parents if needed - Think mkdir -p
+- https://yarnpkg.com/en/package/make-dir
+
+browser-sync
+- Live CSS Reload & Browser Syncing
+- https://yarnpkg.com/en/package/browser-sync
 */
 
 var gulp        = require('gulp'),
