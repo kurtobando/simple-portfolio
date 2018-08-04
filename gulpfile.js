@@ -35,13 +35,20 @@ gulp-sourcemaps
 - To write external source map files, pass a path relative to the destination to sourcemaps.write().
 - https://yarnpkg.com/en/package/gulp-sourcemaps
 
-gulp-imagemin
-- Minify PNG, JPEG, GIF and SVG images with imagemin
-- https://yarnpkg.com/en/package/gulp-imagemin
-
 make-dir
 - Make a directory and its parents if needed - Think mkdir -p
 - https://yarnpkg.com/en/package/make-dir
+
+compress-images
+- Minify size your images. Image compression with extension: jpg/jpeg, svg, png, gif.
+- https://yarnpkg.com/en/package/compress-images
+
+		You can use different algorithms and methods for compress images with many options.
+
+		For JPG: jpegtran, mozjpeg, webp, guetzli, jpegRecompress, jpegoptim, tinify, imagemagick;
+		For PNG: pngquant, optipng, pngout, webp, pngcrush, tinify, imagemagick;
+		For SVG: svgo, imagemagick;
+		For GIF: gifsicle, giflossy, gif2webp, imagemagick;
 
 browser-sync
 - Live CSS Reload & Browser Syncing
@@ -56,8 +63,8 @@ var gulp        = require('gulp'),
  	gulp_concat	= require('gulp-concat'),
 	gulp_htmlmin = require('gulp-htmlmin'),
 	gulp_sourcemaps	= require('gulp-sourcemaps'),
-	gulp_imagemin 	= require('gulp-imagemin'),
 	make_dir 		= require('make-dir'),
+	compress_images = require('compress-images'),
 	browserSync 	= require('browser-sync').create();
 
 gulp.task('browser-sync', function() {
@@ -92,11 +99,9 @@ gulp.task('build-html', function() {
 });
 
 gulp.task('build-js', function(){
-	/*
-	- copy custom, JQuery and UIKit js to 'dist/js/'
-	- source map will be generated
-	- both create non-min and min file of script.js
-	*/
+	/** - copy custom, JQuery and UIKit js to 'dist/js/'
+		- source map will be generated
+		- both create non-min and min file of script.js*/
 
 	// create non-minified
 	gulp.src([
@@ -122,11 +127,9 @@ gulp.task('build-js', function(){
 });
 
 gulp.task('build-sass', function(){
-	/*
-	- copy scss to 'dist/css/'
-	- source map will be generated
-	- both create non-min and min file of style.scss
-	*/
+	/** - copy scss to 'dist/css/'
+		- source map will be generated
+		- both create non-min and min file of style.scss*/
 
 	// create non-minified
 	gulp.src('src/sass/style.scss')
@@ -158,9 +161,21 @@ gulp.task('build-fonts', function(){
 });
 
 gulp.task('build-images', function() {
-	gulp.src('src/images/*')
-		.pipe(gulp_imagemin())
-		.pipe(gulp.dest('dist/images'));
+	var src_path = 'src/images/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}',
+		dist_path = 'dist/images/';
+
+	/** - compress_force (type:boolean): Force compress images already compressed images true or false;
+		- statistic (type:boolean): show image compression statistics true or false;
+		- pathLog (type:string): Path to log file. Default is ./log/compress-images;
+		- autoupdate (type:boolean): Auto-update module «compress_images» to the latest version true or false; */
+
+	compress_images(src_path, dist_path,
+		{compress_force: false, statistic: true, autoupdate: true}, false,
+        {jpg: {engine: 'mozjpeg', command: ['-quality', '50']}},
+        {png: {engine: 'pngquant', command: ['--quality=20-50']}},
+        {svg: {engine: 'svgo', command: '--multipass'}},
+        {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(){
+    });
 });
 
 gulp.task('build', [
