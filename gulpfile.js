@@ -3,6 +3,10 @@ gulp_uglify
 - Minify JavaScript with UglifyJS3.
 - https://www.npmjs.com/package/gulp-uglify
 
+gulp-htmlmin
+- gulp plugin to minify HTML.
+- https://github.com/jonschlinkert/gulp-htmlmin
+
 gulp-sourcemaps
 - Inline source maps are embedded in the source file.
 - All plugins between sourcemaps.init() and sourcemaps.write() need to have support for gulp-sourcemaps.
@@ -16,6 +20,7 @@ var gulp        = require('gulp'),
 	gulp_cssmin = require('gulp-cssmin'),
 	gulp_rename = require('gulp-rename'),
  	gulp_concat	= require('gulp-concat'),
+	gulp_htmlmin = require('gulp-htmlmin'),
 	gulp_sourcemaps	= require('gulp-sourcemaps'),
 	gulp_imagemin 	= require('gulp-imagemin'),
 	make_dir 		= require('make-dir'),
@@ -45,6 +50,10 @@ gulp.task('make-dir', function(){
 
 gulp.task('build-html', function() {
 	gulp.src('src/*.html')
+		.pipe(gulp_htmlmin({
+			collapseWhitespace: true,
+			removeComments: true
+		}))
 		.pipe(gulp.dest('dist/'));
 });
 
