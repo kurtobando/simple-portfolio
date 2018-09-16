@@ -92,7 +92,7 @@ gulp.task('make-dir', function(){
 gulp.task('build-html', function() {
 	gulp.src('src/*.html')
 		.pipe(gulp_htmlmin({
-			collapseWhitespace: true,
+			// collapseWhitespace: true,
 			removeComments: true
 		}))
 		.pipe(gulp.dest('dist/'));
