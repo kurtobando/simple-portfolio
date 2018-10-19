@@ -53,25 +53,49 @@ compress-images
 browser-sync
 - Live CSS Reload & Browser Syncing
 - https://yarnpkg.com/en/package/browser-sync
+
+autoprefixer
+- Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website
+- https://yarnpkg.com/en/package/autoprefixer
+
+gulp-postcss
+- PostCSS gulp plugin
+- https://yarnpkg.com/en/package/gulp-postcss
 */
 
-var gulp        = require('gulp'),
- 	gulp_uglify	= require('gulp-uglify'),
- 	gulp_sass	= require('gulp-sass'),
-	gulp_cssmin = require('gulp-cssmin'),
-	gulp_rename = require('gulp-rename'),
- 	gulp_concat	= require('gulp-concat'),
-	gulp_htmlmin = require('gulp-htmlmin'),
-	gulp_sourcemaps	= require('gulp-sourcemaps'),
-	make_dir 		= require('make-dir'),
-	compress_images = require('compress-images'),
-	browserSync 	= require('browser-sync').create();
+let gulp        	= require('gulp')
+ 	,gulp_uglify	= require('gulp-uglify')
+ 	,gulp_sass		= require('gulp-sass')
+	,gulp_cssmin 	= require('gulp-cssmin')
+	,gulp_rename 	= require('gulp-rename')
+ 	,gulp_concat	= require('gulp-concat')
+	,gulp_htmlmin 	= require('gulp-htmlmin')
+	,gulp_sourcemaps	= require('gulp-sourcemaps')
+	,make_dir 			= require('make-dir')
+	,compress_images 	= require('compress-images')
+	,browser_sync 		= require('browser-sync').create()
+	,autoprefixer 		= require('autoprefixer')
+	,gulp_postcss 		= require('gulp-postcss')
+	;
+
+let distributionPath 	= './dist'
+	,sourcePath 		= './src'
+	,htmlSource 		= sourcePath + '/*.html'
+	,htmlDestination 	= distributionPath
+	,cssSource 			= sourcePath + '/sass/*'
+	,cssDestination 	= distributionPath + '/css'
+	,jsSource 			= [sourcePath + '/js/*.js']
+	,jsDestination 		= distributionPath + '/js'
+	,fontSource 		= [sourcePath + '/fonts']
+	,fontDestination	= distributionPath + '/fonts'
+	,imageSource 		= sourcePath + '/images/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}'
+	,imageDestination	= distributionPath + '/images/'
+	;
 
 gulp.task('browser-sync', function() {
-    browserSync.init({
+    browser_sync.init({
         server: {
-			// server all files in 'dist' directory
-            baseDir: "./dist"
+            baseDir: distributionPath
         }
     });
 });
@@ -90,88 +114,74 @@ gulp.task('make-dir', function(){
 });
 
 gulp.task('build-html', function() {
-	gulp.src('src/*.html')
+	gulp.src(htmlSource)
 		.pipe(gulp_htmlmin({
-			// collapseWhitespace: true,
-			removeComments: true
+			collapseWhitespace: true,
+			removeComments: false
 		}))
-		.pipe(gulp.dest('dist/'));
+		.pipe(gulp.dest(distributionPath));
 });
 
 gulp.task('build-js', function(){
-	/** - copy custom, JQuery and UIKit js to 'dist/js/'
-		- source map will be generated
-		- both create non-min and min file of script.js*/
-
-	// create non-minified
-	gulp.src([
-		   'src/js/*.js',
-		   'node_modules/uikit/vendor/jquery.js',
-		   'node_modules/uikit/dist/js/uikit.js'])
+	// non-minified
+	gulp.src(jsSource)
 	   .pipe(gulp_sourcemaps.init())
 	   .pipe(gulp_concat('script.js'))
 	   .pipe(gulp_sourcemaps.write('./'))
-	   .pipe(gulp.dest('dist/js/'));
+	   .pipe(gulp.dest(jsDestination));
 
-    // create minified
-	gulp.src([
-			'src/js/*.js',
-			'node_modules/uikit/vendor/jquery.js',
-			'node_modules/uikit/dist/js/uikit.js'])
+    // minified
+	gulp.src(jsSource)
 		.pipe(gulp_sourcemaps.init())
 		.pipe(gulp_uglify())
 		.pipe(gulp_concat('script.js'))
 		.pipe(gulp_rename({suffix: '.min'}))
 		.pipe(gulp_sourcemaps.write('./'))
-		.pipe(gulp.dest('dist/js/'));
+		.pipe(gulp.dest(jsDestination));
 });
 
 gulp.task('build-sass', function(){
-	/** - copy scss to 'dist/css/'
-		- source map will be generated
-		- both create non-min and min file of style.scss*/
+	var browser_support = [
+        autoprefixer({
+			browsers: ['last 8 version']
+		})
+    ];
 
-	// create non-minified
-	gulp.src('src/sass/style.scss')
+	// non-minified
+	gulp.src(cssSource)
 		.pipe(gulp_sourcemaps.init())
 		.pipe(gulp_sass().on('error', gulp_sass.logError))
+		.pipe(gulp_postcss(browser_support))
 		.pipe(gulp_concat('style.css'))
 		.pipe(gulp_sourcemaps.write('./'))
-		.pipe(gulp.dest('dist/css/'));
+		.pipe(gulp.dest(cssDestination));
 
-	// create minified
-	gulp.src('src/sass/style.scss')
+	// minified
+	gulp.src(cssSource)
 		.pipe(gulp_sourcemaps.init())
 		.pipe(gulp_sass().on('error', gulp_sass.logError))
+		.pipe(gulp_postcss(browser_support))
 		.pipe(gulp_concat('style.css'))
 		.pipe(gulp_cssmin())
 		.pipe(gulp_rename({suffix: '.min'}))
 		.pipe(gulp_sourcemaps.write('./'))
-		.pipe(gulp.dest('dist/css/'));
+		.pipe(gulp.dest(cssDestination));
 });
 
 gulp.task('build-fonts', function(){
-	// copy 'fonts' to 'build/fonts'
-	gulp.src([
-			'node_modules/uikit/dist/fonts/fontawesome-webfont.ttf',
-			'node_modules/uikit/dist/fonts/fontawesome-webfont.woff',
-			'node_modules/uikit/dist/fonts/fontawesome-webfont.woff2',
-			'node_modules/uikit/dist/fonts/FontAwesome.otf'])
-		.pipe(gulp.dest('dist/fonts/'));
+	gulp.src(fontSource)
+		.pipe(gulp.dest(fontDestination));
 });
 
 gulp.task('build-images', function() {
-	var src_path = 'src/images/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}',
-		dist_path = 'dist/images/';
-
 	/** - compress_force (type:boolean): Force compress images already compressed images true or false;
 		- statistic (type:boolean): show image compression statistics true or false;
 		- pathLog (type:string): Path to log file. Default is ./log/compress-images;
 		- autoupdate (type:boolean): Auto-update module «compress_images» to the latest version true or false; */
 
-	compress_images(src_path, dist_path,
+	compress_images(imageSource, imageDestination,
 		{compress_force: false, statistic: true, autoupdate: true}, false,
-        {jpg: {engine: 'mozjpeg', command: ['-quality', '50']}},
+        {jpg: {engine: 'mozjpeg', command: ['-quality', '90']}},
         {png: {engine: 'pngquant', command: ['--quality=20-50']}},
         {svg: {engine: 'svgo', command: '--multipass'}},
         {gif: {engine: 'gifsicle', command: ['--colors', '64', '--use-col=web']}}, function(){
@@ -179,16 +189,17 @@ gulp.task('build-images', function() {
 });
 
 gulp.task('build', [
-	'make-dir',
-	'build-html',
-	'build-js',
-	'build-sass',
-	'build-fonts',
-	'build-images']
+					'make-dir'
+					,'build-html'
+					,'build-js'
+					,'build-sass'
+					,'build-fonts'
+					,'build-images'
+				]
 );
 
 gulp.task('watch', ['browser-sync'], function(){
-	gulp.watch('src/sass/**/*.scss', 	['build-sass']).on('change', browserSync.reload);
-	gulp.watch('src/js/*.js', 			['build-js']).on('change', browserSync.reload);
-	gulp.watch('src/*.html', 			['build-html']).on('change', browserSync.reload);
+	gulp.watch(cssSource, 	['build-sass']).on('change', browser_sync.reload);
+	gulp.watch(jsSource, 	['build-js']).on('change', browser_sync.reload);
+	gulp.watch(htmlSource, 	['build-html']).on('change', browser_sync.reload);
 });
