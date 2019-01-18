@@ -1,12 +1,18 @@
-/* my variables */
-$font-roboto-slab: 	'Roboto Slab', serif;
-$font-song-myung: 	'Song Myung', serif;
+$font-anton: 				'Anton', sans-serif;
+$font-playfair-display: 	'Playfair Display', serif;
+$font-open-sans-condensed: 	'Open Sans Condensed', sans-serif;
+$font-open-sans: 			'Open Sans', sans-serif;
 
-$color-primary: 	#009ccf;
-$color-secondary: 	#53565a;
+$font-size: 16px;
 
-$utility-container-max-width:                    980px !default;
+$color-gray-000: #252525;
+$color-gray-002: #454545;
+$color-gray-003: #757575;
+$color-gray-004: #e2e2e2;
+$color-white: 	 #fff;
 
-// 1142 x total padding of x2(35) 70
-$utility-container-large-max-width:              1212px !default;
-$utility-container-large-padding-horizontal:     35px !default;
+$bg-img-home: 		'../images/home-bg-image.jpg';
+$bg-img-contact: 	'../images/contact-bg-image.jpg';
+$bg-img-cityescape:	'../images/cityescape-featured-images.jpg';
+
+$max-width: 	1280px;

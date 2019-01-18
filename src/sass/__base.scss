@@ -1,0 +1,60 @@
+html, body{
+	overflow: hidden;
+	font-size: $font-size;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font-open-sans-condensed;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin: 0
+}
+
+p{
+	font-family: $font-open-sans;
+	letter-spacing: -2px;
+	margin: 0
+}
+
+
+.background-image-full-page{
+	background-color: $color-gray-003;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	content: "";
+	position: absolute;
+	width: 100%;
+    height: 100%;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	box-shadow: inset -10px -10px 100px 500px rgba(0,0,0,0.5);
+}
+
+.background-image-remove-blur{
+	filter: blur(3px);
+	transform: scale(1.05); // remove white-blur and make sure "overflow: hidden" in body tag
+}
+
+.viewport-height{
+	height: 100vh;
+}
+
+.center-container{
+	margin: auto;
+	max-width: $max-width;
+	padding: 1.5625rem 1.25rem;
+}
