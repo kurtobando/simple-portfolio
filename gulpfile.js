@@ -7,6 +7,7 @@ var gulp = require("gulp"),
 	clean = require("postcss-clean"),
 	autoprefixer = require("autoprefixer"),
 	uglify = require("gulp-uglify"),
+	tinypng = require("gulp-tinypng-compress"),
 	browsersync = require("browser-sync").create(),
 
 	// sources
