@@ -57,6 +57,15 @@ gulp.task("build-js", function(){
 	.pipe(gulp.dest(dist_js));
 });
 
+gulp.task('build-images', function () {
+    return gulp.src(src_img)
+	.pipe(tinypng({
+		key: 'h5oQBfn1G8TiGDcPRP4iLE0YSyCvTZDu',
+		log: true
+	}))
+	.pipe(gulp.dest(dist_img));
+});
+
 gulp.task("watch", function(){
 	browsersync.init({
 		server: {
