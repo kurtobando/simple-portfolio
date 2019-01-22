@@ -1,5 +1,5 @@
 var gulp = require("gulp"),
-	pug = require("gulp-pug"),
+	jade = require("gulp-jade"),
 	sass = require("gulp-sass"),
 	postcss = require("gulp-postcss"),
 	imports = require("postcss-import"),
@@ -12,21 +12,21 @@ var gulp = require("gulp"),
 
 	// sources
 	src	= './src',
-	src_pug = src + '/*.pug',
+	src_jade = src + '/*.jade',
 	src_sass = src + '/sass/**/*.scss',
 	src_js = src + '/js/*.js',
 	src_img = src + '/images/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}',
 
 	// destinations
 	dist = './dist',
-	dist_pug = dist,
+	dist_jade = dist,
 	dist_sass = dist + '/css',
 	dist_js = dist + '/js',
 	dist_img = dist + '/images/';
 
-gulp.task("build-pug", function(){
-	return gulp.src(src_pug)
-	.pipe(pug({
+gulp.task("build-jade", function(){
+	return gulp.src(src_jade)
+	.pipe(jade({
 	   doctype: 'html',
 	   pretty: 	true
 	}))
@@ -34,7 +34,7 @@ gulp.task("build-pug", function(){
 		console.log(e.toString());
 		this.emit("end");
 	})
-	.pipe(gulp.dest(dist_pug));
+	.pipe(gulp.dest(dist_jade));
 });
 
 gulp.task("build-sass", function(){
@@ -74,9 +74,9 @@ gulp.task("watch", function(){
 		}
 	});
 
-	gulp.watch(src + '/**/*.pug', gulp.series("build-pug")).on('change', browsersync.reload);
+	gulp.watch(src + '/**/*.jade', gulp.series("build-jade")).on('change', browsersync.reload);
 	gulp.watch(src_sass, gulp.series("build-sass")).on('change', browsersync.reload);
 	gulp.watch(src_js, gulp.series("build-js")).on('change', browsersync.reload);
 });
 
-gulp.task("build", gulp.series("build-pug","build-sass","build-js"));
+gulp.task("build", gulp.series("build-jade","build-sass","build-js"));
