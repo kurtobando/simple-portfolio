@@ -12,7 +12,7 @@ var gulp = require("gulp"),
 
 	// sources
 	src	= './src',
-	src_pug = src + '/**/*.pug',
+	src_pug = src + '/*.pug',
 	src_sass = src + '/sass/**/*.scss',
 	src_js = src + '/js/*.js',
 	src_img = src + '/images/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}',
@@ -74,7 +74,7 @@ gulp.task("watch", function(){
 		}
 	});
 
-	gulp.watch(src_pug, gulp.series("build-pug")).on('change', browsersync.reload);
+	gulp.watch(src + '/**/*.pug', gulp.series("build-pug")).on('change', browsersync.reload);
 	gulp.watch(src_sass, gulp.series("build-sass")).on('change', browsersync.reload);
 	gulp.watch(src_js, gulp.series("build-js")).on('change', browsersync.reload);
 });
