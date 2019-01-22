@@ -1,18 +1,4 @@
 @import "normalize.css";
 
 @import '__variables';
-@import '__base';
 
-// Mini	up to 479px	Phones portrait
-@import '__mini';
-
-// Small	480px to 767px	Phones landscape
-@import '__small';
-
-// Medium	768px to 959px	Tablets portrait
-@import '__medium';
-
-// Large	960px to 1199px	Desktops & tablets landscape
-@import '__large';
-
-// Xlarge	1200px and larger	Large Desktops
