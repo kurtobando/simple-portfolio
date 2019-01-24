@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Playfair+Display:400,700,900,900i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Hi, my name is Kurt, an aspiring cinematographer and front-end developer, founder of cityescape.ph">
     <meta name="keywords" content="kurt obando, portfolio">
-    <link rel="author" href="https://plus.google.com/u/0/114919468176469695769">
-    <link rel="canonical" href="https://plus.google.com/u/0/114919468176469695769">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-icon-72x72.png">
@@ -21,32 +19,25 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/fav/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/fav/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
-    <link rel="manifest" href="images/fav/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta property="og:url" content="https://kurtobando.com/">
-    <meta property="og:image" content="images/preview.png">
+    <!--meta(property='og:image', content='images/preview.png')-->
     <meta property="og:description" content="Hi, my name is Kurt, an aspiring cinematographer and front-end developer, founder of cityescape.ph">
     <meta property="og:title" content="Hello, I am Kurt!">
     <meta property="og:site_name" content="Hello, I am Kurt!">
     <meta property="og:see_also" content="https://kurtobando.com/">
     <meta itemprop="name" content="Hello, I am Kurt!">
     <meta itemprop="description" content="Hi, my name is Kurt, an aspiring cinematographer and front-end developer, founder of cityescape.ph">
-    <meta itemprop="image" content="images/preview.png">
+    <!--meta(itemprop='image', content='images/preview.png')-->
     <meta name="twitter:card" content="an aspiring cinematographer and front-end developer, founder of cityescape.ph">
-    <meta name="twitter:url" content="images/preview.png">
+    <!--meta(name='twitter:url', content='images/preview.png')-->
     <meta name="twitter:title" content="Hello, I am Kurt!">
     <meta name="twitter:description" content="Hi, my name is Kurt, an aspiring cinematographer and front-end developer, founder of cityescape.ph">
-    <meta name="twitter:image" content="images/preview.png">
-    <!--if lt IE 9script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-    -->
+    <!--meta(name='twitter:image', content='images/preview.png')-->
     <title>Hello I am Kurt!</title>
-    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-121702615-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -56,31 +47,49 @@
     </script>
   </head>
   <body>
-    <section id="home">
-      <nav class="nav__container">
-        <input id="nav__mobile-menu" type="checkbox">
-        <label class="nav__mobile-menu" for="nav__mobile-menu"><i class="fa fa-bars"></i></label><a class="nav__logo" href="index.html">k.</a>
-        <div class="nav__links-container">
-          <ul class="nav__links">
-            <li><a class="active" href="index.html">home</a></li>
-            <li><a href="work.html">work</a></li>
-            <li><a href="contact.html">contact</a></li>
-            <li>
-              <nav class="nav__social-media"><a href="http://bit.ly/2K91uYE"><i class="fa fa-facebook-official"></i></a><a href="http://bit.ly/2tt2TyO"><i class="fa fa fa-instagram"></i></a><a href="http://bit.ly/2Ltb7NZ"><i class="fa fa-youtube-play"></i></a><a href="http://bit.ly/2Io2Kl5"><i class="fa fa-github"></i></a></nav>
-            </li>
-          </ul>
+    <section class="section">
+      <div class="header">
+        <div class="header__content">
+          <div class="header__brand"></div>
+          <div class="header__navigation"><a href="#" id="navigation" active="false">
+              <li class="fas fa-bars"></li></a>
+            <nav id="navigation-target"><a href="#work">work</a><a href="#contact">contact</a><a href="#about">about</a></nav>
+          </div>
         </div>
-      </nav>
-      <main>
-        <h1>I am Kurt</h1>
-        <p>
-          An aspiring cinematographer,
-          front-end developer and founder of <a href="https://cityescape.ph" target="_blank">cityescape.ph</a>
-        </p>
-      </main>
-      <footer>
-        <nav class="nav__social-media"><a href="http://bit.ly/2K91uYE"><i class="fa fa-facebook-official"></i></a><a href="http://bit.ly/2tt2TyO"><i class="fa fa fa-instagram"></i></a><a href="http://bit.ly/2Ltb7NZ"><i class="fa fa-youtube-play"></i></a><a href="http://bit.ly/2Io2Kl5"><i class="fa fa-github"></i></a></nav>
-      </footer>
+      </div>
+      <div id="about" class="section__content">
+        <div class="display-flex display-flex--center">
+          <h1>Hi, i am Kurt</h1>
+          <p>i design, code,  solve web problems and founder of cityescape.ph</p>
+        </div>
+      </div>
+    </section>
+    <section id="work" class="section">
+      <div class="section__content">
+        <div class="work">
+          <div class="work__content">
+            <div class="work__image">
+              <div class="work__image--iphone"><img src="images/iPhone-X-Mockup.png" alt="cityescape iPhone view"></div>
+              <div class="work__image--desktop"><img src="images/Desktop-Mockup.png" alt="cityescape Desktop view"></div>
+            </div>
+            <div class="work__detail">
+              <h1>Ideal cityescape.ph landing page, can't wait to get this release.</h1>
+              <p>
+                Explore and be part of the community site. 
+                Meet our contributors who have the same interest as yours. You'll love them!
+              </p><a href="http://demo.kurtobando.com/cityescapeph/" class="button button-primary">view demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <div class="section__content">
+        <div class="display-flex display-flex--center">
+          <h1>Do you see potential on my works?</h1>
+          <p>Let me know at me@kurtobando.com</p>
+        </div>
+      </div>
     </section>
     <script src="js/script.js"></script>
   </body>
