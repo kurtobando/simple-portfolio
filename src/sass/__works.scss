@@ -20,6 +20,10 @@
 @include at-tablet{
     .work{
         .work__content{
+            p{
+                margin-top: 1em;
+            }
+            
             .work__image{
                 display: grid;
                 grid-template-columns: 130px 130px auto 20px;
@@ -38,6 +42,28 @@
                 }
             }
             .work__detail{}
+        }
+    }
+}
+
+@include at-desktop{
+    .work{
+        text-align: left;
+        
+        .work__content{
+            display: flex;
+            flex-direction: row-reverse;
+            
+            .work__image{
+                width: 50%;
+                
+                .work__image--desktop{}
+                .work__image--iphone{}
+            }
+            .work__detail{
+                width: 50%;
+                padding-right: 8em;
+            }
         }
     }
 }

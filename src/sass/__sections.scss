@@ -3,7 +3,35 @@
 	
 	.section__content{
 		min-height: 100vh;
-// 		border: 1px dashed black;
+
 		padding: 2em;
+	}
+	*{
+// 		border: 1px dashed black;
+	}
+}
+
+@include at-desktop{
+	.section{
+		.section__content{
+			max-width: 1500px;
+			padding-left: 1em;
+			padding-right: 1em;
+			margin: auto;
+		}
+	}
+	#about{
+		text-align: left;
+	}
+	#work .section__content{
+		display: flex;
+		justify-content: space-around;
+		
+		.work__content{
+			align-items: center;
+		}
+	}
+	#contact{
+		text-align: left;
 	}
 }

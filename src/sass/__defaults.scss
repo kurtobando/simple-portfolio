@@ -28,3 +28,13 @@ a{
 	font-family: inherit;
 }
 
+
+@include at-tablet{
+	h1{
+ 	   font-size: 48px;
+	}
+	p{
+    	font-size: 24px;
+		margin-top: 0.2em;
+	}
+}
