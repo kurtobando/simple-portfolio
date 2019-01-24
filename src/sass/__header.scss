@@ -1,0 +1,45 @@
+.header{
+
+    .header__content{
+		box-sizing: border-box;
+		padding: 2em;
+	}
+    .header__brand{}
+    .header__navigation{
+        text-align: right;
+		height: inherit;
+		display: inherit;
+		justify-content: inherit;
+		flex-direction: inherit;
+        
+        a{
+			font-size: 2.5rem;
+    		font-weight: 700;
+        }
+        
+        nav{
+			display: none;
+            flex-direction: column;
+            
+            a{
+                font-family: $font-lora;
+            }
+        }
+    }
+}
+.header.header--active{
+	color: #fff;
+	background-color: $color-primary;
+	
+	.header__content{
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.header__navigation{
+		nav{
+			display: flex;
+		}
+	}
+}

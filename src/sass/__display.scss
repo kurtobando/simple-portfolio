@@ -1,0 +1,12 @@
+.display{
+    &-flex{
+        display: flex;
+        min-height: inherit;
+        height: inherit;
+    }
+    &-flex--center{
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: -25vh;
+    }
+}

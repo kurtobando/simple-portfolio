@@ -1,48 +1,32 @@
 doctype html
 html(lang='en')
-    head
-        include jade/head.jade
-        
-    body
-        section#home
-            nav.nav__container
-                input#nav__mobile-menu(type='checkbox')
-                label.nav__mobile-menu(for='nav__mobile-menu')
-                    i.fa.fa-bars
-                a.nav__logo(href='index.html') k.
-                .nav__links-container
-                    ul.nav__links
-                        li
-                            a.active(href='index.html') home
-                        li
-                            a(href='work.html') work
-                        li
-                            a(href='contact.html') contact
-                        li
-                            nav.nav__social-media
-                                a(href='http://bit.ly/2K91uYE')
-                                    i.fa.fa-facebook-official
-                                a(href='http://bit.ly/2tt2TyO')
-                                    i.fa.fa.fa-instagram
-                                a(href='http://bit.ly/2Ltb7NZ')
-                                    i.fa.fa-youtube-play
-                                a(href='http://bit.ly/2Io2Kl5')
-                                    i.fa.fa-github
-            main
-                h1 I am Kurt
-                p
-                    | An aspiring cinematographer,
-                    | front-end developer and founder of 
-                    a(href='https://cityescape.ph', target='_blank') cityescape.ph
-            footer
-                nav.nav__social-media
-                    a(href='http://bit.ly/2K91uYE')
-                        i.fa.fa-facebook-official
-                    a(href='http://bit.ly/2tt2TyO')
-                        i.fa.fa.fa-instagram
-                    a(href='http://bit.ly/2Ltb7NZ')
-                        i.fa.fa-youtube-play
-                    a(href='http://bit.ly/2Io2Kl5')
-                        i.fa.fa-github
-        
-        include jade/footer.jade
+	head
+		include jade/head.jade
+
+	body
+		section.section
+			include jade/header.jade
+			
+			.section__content
+				.display-flex.display-flex--center
+					
+						h1 Hi, i am Kurt
+						p i design, code,  solve web problems and founder of cityescape.ph
+
+		section.section
+			.section__content
+				.display-flex.display-flex--center
+					h1 Ideal cityescape.ph landing page, can't wait to get this release.
+					p. 
+						Explore and be part of the community site. 
+						Meet our contributors who have the same interest as yours. You'll love them!
+					a(href="http://demo.kurtobando.com/cityescapeph/").button.button-primary view demo
+
+		section.section
+			.section__content
+				.display-flex.display-flex--center
+					
+						h1 Do you see potential on my works?
+						p Let me know at me@kurtobando.com
+
+		include jade/footer.jade
