@@ -13,7 +13,8 @@
 		flex-direction: inherit;
         
         a{
-			font-size: 2.5rem;
+// 			font-size: 2.5rem;
+			font-size: 1.5rem;
     		font-weight: 700;
         }
 		a#navigation:hover{
@@ -26,7 +27,8 @@
             
             a{
                 font-family: $font-lora;
-				font-size: 48px!important;
+// 				font-size: 48px!important;
+				font-size: 2.5rem!important;
 				
 				&:hover{
 					color: transparent;
