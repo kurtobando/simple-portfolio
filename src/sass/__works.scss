@@ -4,17 +4,11 @@
     }
     .work__content{
         .work__image{
-//             height: 100vh;
-//             border: 1px dashed black;
             display: flex;
             
-            .work__image--desktop,
             .work__image--iphone{
-//                 border: 1px dashed black;
-//                 padding: 1em;
-//                 height: inherit;
+                margin: auto;    
             }
-            
             .work__image--desktop{
                 display: none;
             }
@@ -28,7 +22,7 @@
         .work__content{
             .work__image{
                 display: grid;
-                grid-template-columns: 130px 130px auto;
+                grid-template-columns: 130px 130px auto 20px;
                 grid-template-rows: auto auto auto 50px;
                 
                 .work__image--desktop{
