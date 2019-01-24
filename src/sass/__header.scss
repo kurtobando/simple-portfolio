@@ -16,6 +16,9 @@
 			font-size: 2.5rem;
     		font-weight: 700;
         }
+		a#navigation:hover{
+			color: $color-primary;
+		}
         
         nav{
 			display: none;
@@ -23,10 +26,17 @@
             
             a{
                 font-family: $font-lora;
+				font-size: 48px!important;
+				
+				&:hover{
+					color: transparent;
+					-webkit-text-stroke: 0.5px #fff;
+				}
             }
         }
     }
 }
+
 .header.header--active{
 	color: #fff;
 	background-color: $color-primary;
@@ -38,6 +48,10 @@
 		justify-content: space-between;
 	}
 	.header__navigation{
+		a#navigation:hover{
+			color: #fff;
+		}
+		
 		nav{
 			display: flex;
 		}
