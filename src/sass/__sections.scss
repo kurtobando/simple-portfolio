@@ -11,13 +11,22 @@
 	}
 }
 
-@include at-desktop{
+@include at-tablet{
 	.section{
 		.section__content{
 			max-width: 1500px;
-			padding-left: 1em;
-			padding-right: 1em;
+			padding-left: 2em;
+			padding-right: 2em;
 			margin: auto;
+		}
+	}
+}
+
+@include at-desktop{
+	.section{
+		.section__content{
+			padding-left: 3em;
+			padding-right: 3em;
 		}
 	}
 	#about{
