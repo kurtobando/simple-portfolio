@@ -1,2 +1,1 @@
-
-//# sourceMappingURL=script.js.map
+function ToggleElement(a){this.target=function(t){this.targetElement=t},this.apply=function(t){this.applyCss=t},this.toggle=function(){var t=document.getElementById(a),e=document.getElementsByClassName("header");t.addEventListener("click",function(){"false"===t.getAttribute("active")?(t.setAttribute("active","true"),e[0].setAttribute("class","header header--active")):(t.setAttribute("active","false"),e[0].setAttribute("class","header"))})}}var te=new ToggleElement("navigation");te.target("navigation-target"),te.apply("header--active"),te.toggle();
