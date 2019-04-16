@@ -11,7 +11,7 @@ Hi, my name is Kurt. An aspiring cinematographer and front-end developer, founde
 6. **Vanilla JS** for DOM Manipulation.
 
 ### Screenshot.
-[![Screenshot](http://images.kurtobando.com/gif/screencast-kurtobando.com-2019.04.16-13-06-36.gif "Screenshot")](http://images.kurtobando.com/gif/screencast-kurtobando.com-2019.04.16-13-06-36.gif "Screenshot")
+![Screenshot](https://github.com/kurtobando/kurtobando/blob/master/screenshot/screencast-kurtobando.com-2019.04.16-13-06-36.gif?raw=true "Screenshot")
 
 ### Installation
 ```bash
