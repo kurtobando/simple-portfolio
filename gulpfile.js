@@ -79,4 +79,4 @@ gulp.task("watch", function(){
 	gulp.watch(src_js, gulp.series("build-js")).on('change', browsersync.reload);
 });
 
-gulp.task("build", gulp.series("build-jade","build-sass","build-js"));
+gulp.task("build", gulp.series("build-jade","build-sass","build-js","build-images"));

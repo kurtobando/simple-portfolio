@@ -4,36 +4,28 @@ html(lang='en')
 		include jade/head.jade
 
 	body
-		section.section
+		section
 			include jade/header.jade
-			
-			.section__content#about
-				.display-flex.display-flex--center
-						h1 Hi, i am Kurt
-						p i design, code,  solve web problems and founder of cityescape.ph
 
-		section#work.section
-			.section__content
-				.work
-					.work__content
-						.work__image
-							.work__image--iphone
-								img(src="images/iPhone-X-Mockup.png", alt="cityescape iPhone view")
-							.work__image--desktop
-								img(src="images/Desktop-Mockup.png", alt="cityescape Desktop view")
-						
-						.work__detail
-							h1 Ideal cityescape.ph landing page, can't wait to get this release.
-							p. 
-								Explore and be part of the community site. 
-								Meet our contributors who have the same interest as yours. You'll love them!
-							a(href="http://demo.kurtobando.com/cityescapeph/", target="_blank").button.button-primary view demo
-							a(href="http://links.kurtobando.com/demo-cityescape-ph", target="_blank").button.button-primary.button-primary--outline download PSD
+			h1 Hi i'm Kurt
+			p i design, code, solve web problems and founder of cityescape.ph
 
-		section#contact.section
-			.section__content
-				.display-flex.display-flex--center
-						h1 Do you see potential on my works?
-						p Let me know at me@kurtobando.com
+		section
+
+			img(src="images/iPhone-X-Mockup.png", alt="cityescape iPhone view")
+
+			img(src="images/Desktop-Mockup.png", alt="cityescape Desktop view")
+
+
+			h1 Ideal cityescape.ph landing page, can't wait to get this release.
+			p. 
+				Explore and be part of the community site. 
+				Meet our contributors who have the same interest as yours. You'll love them!
+			a(href="http://demo.kurtobando.com/cityescapeph/", target="_blank") view demo
+			a(href="http://links.kurtobando.com/demo-cityescape-ph", target="_blank") download PSD
+
+		section
+			h1 Do you see potential on my works?
+			p Let me know at me@kurtobando.com
 
 		include jade/footer.jade
