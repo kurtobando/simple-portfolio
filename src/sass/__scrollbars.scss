@@ -1,8 +1,8 @@
 body{
     &::-webkit-scrollbar{
-        width: 8px;
+        width: $scrollbar-width;
     }
 	&::-webkit-scrollbar-thumb{
-		background-color: #444;
+		background-color: $scrollbar-color;
 	}
 }

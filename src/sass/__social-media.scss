@@ -1,0 +1,16 @@
+.social-media{
+	font-size: 2em;
+	justify-content: center;
+
+	a{
+		text-decoration: none;
+		font-size: inherit;
+		margin: 1em 0.2em;
+		transition: all 0.2s ease;
+		color: $color-third;
+		
+		&:hover{
+			color: $color-primary;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+	head
+		include jade/head.jade
+
+	body
+		// offset navigation
+		include jade/__navigation-offset.jade
+		
+		.page-label
+			.page-label__content
+				h3.color-white contact
+				
+		.container
+			section.section.section-cover.padding-remove-top.padding-remove-bottom
+				.flex.flex-column.flex-space-between(style="min-height: inherit;")
+					include jade/__navigation.jade
+					
+					section(style="text-align: center;")
+						h1 Do you see potential on my works?
+						p Let me know at me@kurtobando.com
+
+		include jade/footer.jade
