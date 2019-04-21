@@ -1,12 +1,13 @@
 .page-label{
 	width: 8em;
     height: 8em;
-    margin: 0;
-    padding: 0;
     background: $color-primary;
     clip-path: polygon(0 0,0 100%,100% 0);
     top: 0;
     position: absolute;
+	padding-top: 1em;
+    padding-left: 1em;
+    box-sizing: content-box;
 }
 .page-label__content{
 	transform: rotate(-45deg);
