@@ -6,7 +6,6 @@ var gulp = require("gulp"),
 	pxtorem = require("postcss-pxtorem"),
 	clean = require("postcss-clean"),
 	autoprefixer = require("autoprefixer"),
-	uglify = require("gulp-uglify"),
 	tinypng = require("gulp-tinypng-compress"),
 	webpack = require("webpack"),
 	stream = require("webpack-stream"),
@@ -55,16 +54,6 @@ gulp.task("build-js", function() {
     .pipe(stream(require('./webpack.config.js')), webpack)
     .pipe(gulp.dest(dist_js));
 });
-
-// gulp.task("build-js", function(){
-// 	return gulp.src(src_js)
-// 	.pipe(uglify())
-// 	.on("error", function(e){
-// 		console.log(e.toString());
-// 		this.emit("end");
-// 	})
-// 	.pipe(gulp.dest(dist_js));
-// });
 
 gulp.task('build-images', function () {
     return gulp.src(src_img)
