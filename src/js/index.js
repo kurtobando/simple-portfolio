@@ -1,1 +1,1 @@
-import navigation_offset '__navigation-offset.js';
+import navigationOffset from './__navigation-offset.js';
