@@ -21,7 +21,7 @@ html(lang='en')
 							Do you see potential on my works? <br>
 							Let me know. <br>
 							
-						form(name="form-contact", action="", method="get", autocomplete="off", style="width: 100%; max-width: 700px; margin: 0em auto 5em auto;").form.form-contact
+						form(name="formContact", action="../php/", method="POST", autocomplete="off", style="width: 100%; max-width: 700px; margin: 0em auto 5em auto;").form.form-contact
 							.form-contact__content
 								div.form-contact__name
 									input(name="name", placeholder="full name", type="text")
@@ -31,5 +31,8 @@ html(lang='en')
 									textarea(name="message", placeholder="your message here ...")
 								div.form-contact__submit
 									input(name="submit", type="submit", value="send message").button.button-primary.button-round.color-white
-
+							
+							p#formContact_message
+						
+						
 		include jade/footer.jade
