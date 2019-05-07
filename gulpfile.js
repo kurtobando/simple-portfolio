@@ -6,8 +6,9 @@ var gulp = require("gulp"),
 	pxtorem = require("postcss-pxtorem"),
 	clean = require("postcss-clean"),
 	autoprefixer = require("autoprefixer"),
-	uglify = require("gulp-uglify"),
 	tinypng = require("gulp-tinypng-compress"),
+	webpack = require("webpack"),
+	stream = require("webpack-stream"),
 	browsersync = require("browser-sync").create(),
 
 	// sources
@@ -48,14 +49,10 @@ gulp.task("build-sass", function(){
 	.pipe(gulp.dest(dist_sass));
 });
 
-gulp.task("build-js", function(){
+gulp.task("build-js", function() {
 	return gulp.src(src_js)
-	.pipe(uglify())
-	.on("error", function(e){
-		console.log(e.toString());
-		this.emit("end");
-	})
-	.pipe(gulp.dest(dist_js));
+    .pipe(stream(require('./webpack.config.js')), webpack)
+    .pipe(gulp.dest(dist_js));
 });
 
 gulp.task('build-images', function () {
@@ -79,4 +76,4 @@ gulp.task("watch", function(){
 	gulp.watch(src_js, gulp.series("build-js")).on('change', browsersync.reload);
 });
 
-gulp.task("build", gulp.series("build-jade","build-sass","build-js"));
+gulp.task("build", gulp.series("build-jade","build-sass","build-js","build-images"));

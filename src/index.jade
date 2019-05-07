@@ -4,36 +4,32 @@ html(lang='en')
 		include jade/head.jade
 
 	body
-		section.section
-			include jade/header.jade
-			
-			.section__content#about
-				.display-flex.display-flex--center
-						h1 Hi, i am Kurt
-						p i design, code,  solve web problems and founder of cityescape.ph
+		// offset navigation
+		include jade/__navigation-offset.jade
+		
+		.page-label
+			.page-label__content
+				h3.color-white about
+		
+		.container
+			section.section.section-cover.padding-remove-top.padding-remove-bottom
+				.flex.flex-column.flex-space-between(style="min-height: inherit;")
+					include jade/__navigation.jade
+					
+					section(style="text-align: center;")
+						h1(style="font-size: 4rem; margin: 0;").
+							Kurt Obando
+						p(style="font-size: 1.5rem; font-weight: 300;")
+							| i design, code, solve web problems <br>
+							| and created 
+							a.color-primary(href="https://cityescape.ph/", style="font-weight: inherit; font-size: inherit; font-family: inherit; text-decoration: none;") cityescape.ph
+							
+						a(href="projects.html", style="padding: 1em 4em;").button.button-primary.button-round.color-white view projects
+						ol.flex.flex-wrap.social-media
+							li: a(href="https://github.com/kurtobando").fab.fa-github
+							li: a(href="https://dribbble.com/kurtobando").fab.fa-dribbble
 
-		section#work.section
-			.section__content
-				.work
-					.work__content
-						.work__image
-							.work__image--iphone
-								img(src="images/iPhone-X-Mockup.png", alt="cityescape iPhone view")
-							.work__image--desktop
-								img(src="images/Desktop-Mockup.png", alt="cityescape Desktop view")
-						
-						.work__detail
-							h1 Ideal cityescape.ph landing page, can't wait to get this release.
-							p. 
-								Explore and be part of the community site. 
-								Meet our contributors who have the same interest as yours. You'll love them!
-							a(href="http://demo.kurtobando.com/cityescapeph/", target="_blank").button.button-primary view demo
-							a(href="http://links.kurtobando.com/demo-cityescape-ph", target="_blank").button.button-primary.button-primary--outline download PSD
 
-		section#contact.section
-			.section__content
-				.display-flex.display-flex--center
-						h1 Do you see potential on my works?
-						p Let me know at me@kurtobando.com
+					section
 
 		include jade/footer.jade

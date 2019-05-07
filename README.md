@@ -1,4 +1,5 @@
 # kurtobando.com
+
 ### Description
 Hi, my name is Kurt. An aspiring cinematographer and front-end developer, founder of cityescape.ph. This is the repository for my portfolio where I showcase my skills. If you wish to check my portfolio, [click here.](http://kurtobando.com/ "click here.")
 
@@ -10,16 +11,14 @@ Hi, my name is Kurt. An aspiring cinematographer and front-end developer, founde
 5. **Gulp** as Task Runner for Pug and SASS.
 6. **Vanilla JS** for DOM Manipulation.
 
-### Screenshot.
-![Screenshot](https://github.com/kurtobando/kurtobando/blob/master/screenshot/screencast-kurtobando.com-2019.04.16-13-06-36.gif?raw=true "Screenshot")
 
 ### Installation
 ```bash
-$ npm install && gulp build && gulp build-images
+$ npm install && npm run build
 ```
 
 If you wish to watch your desired changes with browser-sync, use:
 
 ```bash
-$ gulp watch
+$ npm run watch
 ```

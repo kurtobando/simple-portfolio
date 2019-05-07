@@ -1,13 +1,42 @@
+// typo
 $font-montserrat:           'Montserrat', sans-serif;
-$font-lora:                 'Lora', serif;
+$font-pt:           		'PT Serif', serif;
 $font-size: 16px;
 
 $color-primary: #eb971f;
+$color-secondary: #444;
+$color-third: #8c8c8c;
 
-$max-width: 	1500px;
+// global
+$width-max: 1200px;
+$base-padding: 2em;
+$base-margin: 2em;
+$base-margin-small: 0.5em;
 
+$base-heading-font: $font-pt;
+$base-heading-font-weight: 700;
+
+$base-font: $font-montserrat;
+$base-font-size: $font-size;
+
+$base-p-font: $font-montserrat;
+$base-p-font-size: $font-size;
+$base-p-color: $color-third;
+
+$base-a-font: $font-pt;
+$base-a-font-size: $font-size;
+
+// button
+$button-font: $font-montserrat;
+$button-font-weight: 400;
+
+// breakpoints
 $breakpoints-tiny-mobile: 	320px;
 $breakpoints-small-mobile: 	480px;
 $breakpoints-tablet: 		768px;
 $breakpoints-desktop: 		992px;
 $breakpoints-wide: 			1200px;
+
+// scrollbar
+$scrollbar-width: 8px; 
+$scrollbar-color: #444;

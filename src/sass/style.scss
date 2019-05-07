@@ -1,11 +1,23 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,700,900);
+@import url(//fonts.googleapis.com/css?family=PT+Serif:400,700);
+@import url(//use.fontawesome.com/releases/v5.6.3/css/all.css);
+
 @import "normalize.css";
 
 @import '__variables';
+@import '__default';
+@import '__color';
 @import '__mixins';
-@import '__defaults';
-@import '__buttons';
-@import '__header';
-@import '__sections';
 @import '__scrollbars';
-@import '__display';
-@import '__works';
+@import '__container';
+@import '__section';
+@import '__flex';
+@import '__margin';
+@import '__padding';
+@import '__navigation-offset';
+@import '__button';
+@import '__project-card';
+@import '__social-media';
+@import '__page-label';
+@import '__form';
+
