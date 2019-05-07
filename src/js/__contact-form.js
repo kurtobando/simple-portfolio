@@ -5,7 +5,7 @@ function contactForm() {
 
 	// store contact form
 	let _formContact = document.forms.formContact;
-
+	
 	// listen submit in contact form
 	_formContact.addEventListener("submit", function(e) {
 		e.preventDefault();
@@ -61,6 +61,5 @@ function contactForm() {
 		});
 	}
 }
-
 
 export default contactForm;
