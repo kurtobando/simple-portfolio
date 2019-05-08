@@ -34,7 +34,12 @@ class Contact extends CI_Controller {
 					$this->email->to('me@kurtobando.com');
 
 					$this->email->subject('Message from Contact Form | Kurt Obando');
-					$this->email->message($this->input->post('message') . " From: " . $this->input->post('email'));
+					$this->email->message(
+						"\n" .
+						$this->input->post('message') .
+						"\n" .
+						"From: " .
+						$this->input->post('email'));
 
 // 					$this->email->send();
 					
