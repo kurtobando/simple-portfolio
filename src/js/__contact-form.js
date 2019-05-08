@@ -14,6 +14,11 @@ function contactForm() {
 		_formContact_message.innerHTML = "loading ...";
 		
 		_axiosdefault();
+		
+		_formContact.elements.name.value = "";
+		_formContact.elements.email.value = "";
+		_formContact.elements.message.value = "";
+
 	});
 
 	// Send a POST request
@@ -31,7 +36,7 @@ function contactForm() {
 			}
 		})
 		.then(function(response){
-			console.log(response);
+// 			console.log(response);
 			_formContact_message.innerHTML = response.data.message;
 		})
 		.catch(function(error) {
