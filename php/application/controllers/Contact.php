@@ -5,6 +5,10 @@ class Contact extends CI_Controller {
 
 	public function index()
 	{
+		
+// 		print_r($_POST);
+// 		print_r($_SERVER);
+		
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('email');
