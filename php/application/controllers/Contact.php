@@ -18,7 +18,7 @@ class Contact extends CI_Controller {
 			
 			$this->form_validation->set_rules('name', 'Name', 'required|min_length[5]');
 			$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
-			$this->form_validation->set_rules('message', 'Message', 'required|min_length[10]|max_length[180]');
+			$this->form_validation->set_rules('message', 'Message', 'required|min_length[10]|max_length[1000]');
 			
 			
 			 if ($this->form_validation->run() == FALSE)
