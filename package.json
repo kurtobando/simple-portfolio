@@ -1,35 +1,29 @@
 {
   "name": "kurtobando",
-  "version": "2.0.0",
-  "description": "Hi, my name is Kurt. An aspiring cinematographer and front-end developer, founder of cityescape.ph. This is the repository for my portfolio where I showcase my skills.",
-  "main": "gulpfile.js",
-  "author": "kurtobando",
-  "license": "MIT",
+  "private": true,
+  "description": "A simple portfolio for kurtobando.com",
+  "version": "0.1.0",
+  "license": "0BSD",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "clean": "rm -r ./dist/*"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "bootstrap": "^4.5.0",
+    "gatsby": "^2.23.12",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-sass": "^2.3.12",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.3",
-    "axios": "^0.18.0",
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-tinypng-compress": "^1.2.1",
-    "jquery": "^3.4.1",
-    "postcss-clean": "^1.1.0",
-    "postcss-import": "^12.0.1",
-    "postcss-pxtorem": "^4.0.1",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.1",
-    "webpack-stream": "^5.2.1"
+    "node-sass": "^4.14.1",
+    "prettier": "2.0.5"
   }
 }

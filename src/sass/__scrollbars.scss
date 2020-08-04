@@ -1,8 +1,0 @@
-body{
-    &::-webkit-scrollbar{
-        width: $scrollbar-width;
-    }
-	&::-webkit-scrollbar-thumb{
-		background-color: $scrollbar-color;
-	}
-}
