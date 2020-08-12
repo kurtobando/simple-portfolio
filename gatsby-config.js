@@ -5,14 +5,17 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  siteMetadata: {
-    title: `Hello I am Kurt!`,
-    description: `Hi, i am Kurt. i design, code, solve web problems and founder of cityescape.ph. Do you see potential on my works? Let me know.`,
-    author: `kurt obando`
-  },
-  plugins: [
-      `gatsby-plugin-react-helmet`,
-      `gatsby-plugin-sass`
-  ],
+    /* Your site config here */
+    siteMetadata: {
+        title: `Hey! I’m Kurt.`,
+        description: `a frontend developer who enjoy the experience working with JavaScript, and travel during spare time.`,
+        author: `kurt obando`,
+        github: `https://github.com/kurtobando`,
+        linkedIn: `https://www.linkedin.com/in/kurt-obando/`,
+        dribble: `https://dribbble.com/kurtobando`
+    },
+    plugins: [
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sass`
+    ],
 }
