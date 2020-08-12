@@ -5,7 +5,7 @@ import Head from "../component/head"
 const TemplateDefault = ( props ) => {
 	return(
 		<Fragment>
-			<div className="container">
+			<div className="container min-vh-100">
 				<Head />
 				<Navigation />
 				{ props.children }

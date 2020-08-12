@@ -1,2 +1,2 @@
 /* gatsbyjs.org/docs/recipes/styling-css/ */
-import "bootstrap/scss/bootstrap.scss"
+import "./src/styles/styles.scss"
