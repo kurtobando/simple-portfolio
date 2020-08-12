@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import TemplateDefault from "../component/template.default"
+import AccentLine from "../component/accent.line"
 
 const Home = () => {
     const data = useStaticQuery( graphql`
@@ -21,6 +22,7 @@ const Home = () => {
                    <div className="text-center text-md-left">
                        <h1 className="font-weight-bold">{data.site.siteMetadata.title}</h1>
                        <p>{data.site.siteMetadata.description}</p>
+                       <AccentLine />
                    </div>
                 </div>
             </TemplateDefault>
