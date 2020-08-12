@@ -17,9 +17,9 @@ const Home = () => {
     return(
         <Fragment>
             <TemplateDefault>
-                <div className="d-flex justify-content-end align-items-center" style={{ minHeight : "70vh" }}>
-                   <div>
-                       <h1>{data.site.siteMetadata.title}</h1>
+                <div className="d-flex flex-column justify-content-end" style={{ minHeight : "70vh" }}>
+                   <div className="text-center text-md-left">
+                       <h1 className="font-weight-bold">{data.site.siteMetadata.title}</h1>
                        <p>{data.site.siteMetadata.description}</p>
                    </div>
                 </div>
