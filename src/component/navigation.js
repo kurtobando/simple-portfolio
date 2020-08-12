@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Navigation = () => {
 	return(
 		<Fragment>
-			<div className="d-flex flex-wrap justify-content-end">
+			<div className="d-flex flex-wrap justify-content-end font-weight-bold">
 				<Link className="m-2" to="/">about</Link>
 				<Link className="m-2" to="/contact">contact</Link>
 				<Link className="m-2" to="/project">project</Link>
