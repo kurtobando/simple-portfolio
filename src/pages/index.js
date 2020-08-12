@@ -1,10 +1,8 @@
 import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Navigation from "../component/navigation"
-import Head from "../component/head"
+import TemplateDefault from "../component/template.default"
 
-
-export default function Home() {
+const Home = () => {
     const data = useStaticQuery( graphql`
         query{
             site{
@@ -18,11 +16,13 @@ export default function Home() {
     `)
     return(
         <Fragment>
-            <Head />
-            <Navigation />
-            <h1>{data.site.siteMetadata.title}</h1>
-            <p>{data.site.siteMetadata.description}</p>
-            <small>{data.site.siteMetadata.author}</small>
+            <TemplateDefault>
+                <h1>{data.site.siteMetadata.title}</h1>
+                <p>{data.site.siteMetadata.description}</p>
+                <small>{data.site.siteMetadata.author}</small>
+            </TemplateDefault>
         </Fragment>
     )
 }
+
+export default Home

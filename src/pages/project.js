@@ -1,13 +1,12 @@
 import React, { Fragment } from "react"
-import Navigation from "../component/navigation"
-import Head from "../component/head"
+import TemplateDefault from "../component/template.default"
 
 const Project = () => {
 	return (
 		<Fragment>
-			<Head />
-			<Navigation />
-			Hello Project Page
+			<TemplateDefault>
+				Hello Project Page
+			</TemplateDefault>
 		</Fragment>
 	)
 }
