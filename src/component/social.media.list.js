@@ -7,7 +7,7 @@ const List = ( props ) => {
 	if ( index !== 0 ) {
 		return(
 			<Fragment>
-				<li className="list-inline-item">
+				<li className="list-inline-item circle">
 					<svg width="0.6em" height="0.6em" viewBox="0 0 16 16" className="bi bi-circle-fill text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<circle cx="8" cy="8" r="8"/>
 					</svg>
