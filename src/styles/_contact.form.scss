@@ -1,0 +1,16 @@
+.contact-form {
+	input, textarea {
+		font-family: $font-family-monospace;
+		padding : 1.5em;
+	}
+	.form-control {
+		border: 0;
+		outline: 0;
+		background-color: $gray-100;
+	}
+	.btn {
+		font-size: 14px;
+		font-weight: 600;
+		padding: 1em;
+	}
+}
