@@ -20,10 +20,12 @@ const Home = () => {
             <TemplateDefault>
                 <div className="d-flex flex-column justify-content-end" style={{ minHeight : "70vh" }}>
                    <div className="text-center text-md-left">
-                       <h1 className="font-weight-bold">{data.site.siteMetadata.title}</h1>
-                       <p>{data.site.siteMetadata.description}</p>
+                       <h1 className="font-weight-bold" style={{ fontSize: "64px" }}>{data.site.siteMetadata.title}</h1>
+                       <p style={{ fontSize: "36px" }} >{data.site.siteMetadata.description}</p>
                        <AccentLine />
-                       <SocialMediaList />
+                       <div className="my-3">
+                           <SocialMediaList />
+                       </div>
                    </div>
                 </div>
             </TemplateDefault>
