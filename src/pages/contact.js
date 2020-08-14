@@ -7,7 +7,7 @@ const Contact = () => {
 	return (
 		<Fragment>
 			<TemplateDefault>
-				<div className="d-flex flex-column justify-content-center" style={{ minHeight : "90vh" }}>
+				<div className="d-flex flex-column justify-content-center mx-auto" style={{ minHeight : "90vh", maxWidth : "600px" }}>
 					<div className="text-center">
 						<h1>Want to work together ? </h1>
 						<AccentLine/>
