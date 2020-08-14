@@ -40,7 +40,7 @@ const SocialMediaList = () => {
 	`)
 
 	return(
-		<ul className="list-inline">
+		<ul className="list-inline social-media-list">
 			{
 				Object.keys( data.site.siteMetadata ).map(( value, index ) => {
 					return <List key={ index } index={ index } text={ value } href={ data.site.siteMetadata[value] } />
