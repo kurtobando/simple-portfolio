@@ -17,5 +17,12 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdown`,
+                path: `${__dirname}/src/markdown/`,
+            }
+        },
     ],
 }
