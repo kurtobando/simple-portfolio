@@ -16,3 +16,41 @@ module.exports.onCreateNode = ({ node, actions }) => {
 		})
 	}
 }
+
+
+
+module.exports.createPages = async ({ graphql, actions }) => {
+	const { createPage } = actions
+	const template 		 = path.resolve('./src/component/template.project.js')
+	const slugs			 = await graphql(`
+        query{
+			allMarkdownRemark {
+				nodes {
+					id
+					fields {
+						slug
+					}
+					frontmatter {
+						description
+						reason
+						technologies
+						title
+						image
+					}
+					html
+				}
+			}
+        }
+	`)
+
+	slugs.data.allMarkdownRemark.nodes.forEach(( value ) => {
+		createPage({
+			component : template,
+			path : `/project/${ value.fields.slug }`,
+			context : {
+				slug : value.fields.slug,
+				data : value
+			}
+		})
+	})
+}
