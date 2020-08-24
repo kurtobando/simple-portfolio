@@ -1,4 +1,7 @@
 .navigation {
+  a {
+    font-family: $font-family-sans-serif;
+  }
   .active {
     color: $primary;
     border-bottom: 4px solid;

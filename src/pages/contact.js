@@ -13,7 +13,7 @@ const Contact = () => {
 						<div className="col-5 mx-auto my-3">
 							<AccentLine/>
 						</div>
-						<p className="display-4">I work best with people who are passionate about what they are working on. If you are excited about something you are making. I want to work with you.</p>
+						<h2 className="display-4">I work best with people who are passionate about what they are working on. If you are excited about something you are making. I want to work with you.</h2>
 						<div className="my-4">
 							<SocialMediaList />
 						</div>
