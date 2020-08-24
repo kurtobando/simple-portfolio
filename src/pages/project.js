@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import TemplateDefault from "../component/template.default"
 
-const TechnologiesList = ( props ) => {
+export const TechnologiesList = ( props ) => {
 	const { text, index } = props
 	// will add circle
 	if ( index !== 0 ) {
