@@ -44,11 +44,11 @@ const ProjectList = ( props ) => {
 							</div>
 							{/* project details */}
 							<div className="p-4">
-								<h2 className="h5 font-weight-bold">{ props.data.frontmatter.title }</h2>
+								<h2 className="h5 font-weight-bold text-dark">{ props.data.frontmatter.title }</h2>
 								<p>{ props.data.frontmatter.description }</p>
-								<h3 className="h6 font-weight-bold">Why this project?</h3>
+								<h3 className="h6 font-weight-bold text-dark">Why this project?</h3>
 								<p>{ props.data.frontmatter.reason }</p>
-								<p>{ technologies.map(( value, index ) => <TechnologiesList key={ index } index={ index } text={ value } /> ) }</p>
+								<p className="mt-4">{ technologies.map(( value, index ) => <TechnologiesList key={ index } index={ index } text={ value } /> ) }</p>
 							</div>
 						</div>
 					</div>
