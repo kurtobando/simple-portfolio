@@ -4,6 +4,7 @@ description: A simple tool for getting the DNS entries and whois records in one 
 reason: I find it time-consuming if I query both DNS and Whois records in each separate designated websites.
 technologies: html,css,javascript,php
 image: https://camo.githubusercontent.com/272af7fb32e4a4862efcea51d419fe94193e9153/68747470733a2f2f736e61672e67792f636f314133342e6a7067
+repository: https://github.com/kurtobando/tools
 ---
 
 ### How to use it? 

@@ -4,6 +4,7 @@ description: A lightweight JS plugin for tags without JQuery library
 reason: is to learn how to use vanilla JavaScript in manipulating HTML elements.
 technologies: html,css,javascript
 image: https://demo.kurtobando.com/screencast/simple-tags.gif
+repository: https://github.com/kurtobando/simple-tags
 ---
 
 ### Getting Started
