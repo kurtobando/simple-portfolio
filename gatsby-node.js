@@ -36,6 +36,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 						technologies
 						title
 						image
+						repository
 					}
 					html
 				}
