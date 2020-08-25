@@ -6,12 +6,15 @@ technologies: html,css,javascript,php
 image: https://camo.githubusercontent.com/272af7fb32e4a4862efcea51d419fe94193e9153/68747470733a2f2f736e61672e67792f636f314133342e6a7067
 ---
 
-With that said, I have this tool which we can query both. If you wish to check the demo page, visit [here](https://tools.kurtobando.com/tools/)
-
 ### How to use it? 
 Enter a domain name on the search area, then click on Dig Records. This should return DNS result and whois result respectively. For example:
 [![Tool Result](https://snag.gy/co1A34.jpg "Tool Result")](https://snag.gy/co1A34.jpg "Tool Result")
 
-### Tools used?
-1. **UIKit** as CSS Framework.
-2. **Vanilla Javascript** for simple DOM Manipulation.
+### Demo
+Visit [here](https://tools.kurtobando.com/tools/)
+
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
+
+### License
+[MIT](https://choosealicense.com/licenses/mit/)

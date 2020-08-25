@@ -25,4 +25,13 @@
     text-decoration: underline;
     color: $primary;
   }
+  a.btn {
+    text-decoration: none!important;
+    color: inherit;
+    margin-top: -1.3rem;
+    //font-family: 'Ubuntu Mono', monospace;
+    &:hover{
+      color: #ffffff;
+    }
+  }
 }
