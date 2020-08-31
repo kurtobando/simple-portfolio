@@ -1,9 +1,32 @@
 import React, { Fragment } from "react"
+import axios from 'axios'
+import { useForm } from "react-hook-form"
 import TemplateDefault from "../component/template.default"
 import SocialMediaList from "../component/social.media.list"
-import AccentLine from "../component/accent.line";
+import AccentLine from "../component/accent.line"
 
 const Contact = () => {
+	const { errors, register, handleSubmit } = useForm({ mode: 'onSubmit', reValidateMode : 'onSubmit' })
+	const URL = process.env.GATSBY_EXPRESS_URL
+	const PORT = process.env.GATSBY_EXPRESS_PORT
+
+
+	const handleOnSubmit = async ( data, event ) => {
+		event.preventDefault()
+		event.target.reset()
+
+		const result = await axios({
+			method : "POST",
+			data : JSON.stringify( data ),
+			url : `${URL}:${PORT}/contact/send`,
+			headers: {
+				'Accept' : 'application/json',
+				'Content-Type' : 'application/json',
+			}
+		})
+
+		console.log( result )
+	}
 	return (
 		<Fragment>
 			<TemplateDefault>
@@ -17,15 +40,48 @@ const Contact = () => {
 						<div className="my-4">
 							<SocialMediaList />
 						</div>
-						<form className="d-flex flex-column contact-form">
+						<form className="d-flex flex-column contact-form" onSubmit={ handleSubmit( handleOnSubmit ) }>
 							<div className="form-group">
-								<input className="form-control" type="text" placeholder="name" />
+								<input
+									className="form-control"
+									type="text"
+									placeholder="name"
+									name="name"
+									ref={
+										register({
+											required : "name is required"
+										})
+									}
+								/>
+								{ errors.name && <div className="text-left text-danger small pl-4 pt-2">{ errors.name.message }</div> }
 							</div>
 							<div className="form-group">
-								<input className="form-control" type="email" placeholder="email address" />
+								<input
+									className="form-control"
+									type="email"
+									placeholder="email address"
+									name="email"
+									ref={
+										register({
+											required : "email address is required"
+										})
+									}
+								/>
+								{ errors.email && <div className="text-left text-danger small pl-4 pt-2">{ errors.email.message }</div> }
 							</div>
 							<div className="form-group">
-								<textarea className="form-control" rows="5"  placeholder="message" />
+								<textarea
+									className="form-control"
+									rows="5"
+									placeholder="message"
+									name="message"
+									ref={
+										register({
+											required : "message is required"
+										})
+									}
+								/>
+								{ errors.message && <div className="text-left text-danger small pl-4 pt-2">{ errors.message.message }</div> }
 							</div>
 							<input className="btn btn-primary btn-block " type="submit" value="send message" />
 						</form>

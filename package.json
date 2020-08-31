@@ -10,6 +10,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "server": "node server/server.js",
+    "dev-server": "nodemon server/server.js",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
@@ -17,18 +19,27 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "gatsby": "^2.23.12",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-remark": "^2.8.28",
+    "helmet": "^4.1.0",
+    "nodemailer": "^6.4.11",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.7.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "prettier": "2.0.5"
   }
 }
