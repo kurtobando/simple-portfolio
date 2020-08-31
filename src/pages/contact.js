@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 import axios from 'axios'
 import { useForm } from "react-hook-form"
 import TemplateDefault from "../component/template.default"
@@ -7,15 +7,20 @@ import AccentLine from "../component/accent.line"
 
 const Contact = () => {
 	const { errors, register, handleSubmit } = useForm({ mode: 'onSubmit', reValidateMode : 'onSubmit' })
-	const URL = process.env.GATSBY_EXPRESS_URL
-	const PORT = process.env.GATSBY_EXPRESS_PORT
+	const URL 	= process.env.GATSBY_EXPRESS_URL
+	const PORT 	= process.env.GATSBY_EXPRESS_PORT
 
+	const [ isLoading, setIsLoading ] = useState( false )
+	const [ isSuccessful, setIsSuccessful ] = useState( false )
 
 	const handleOnSubmit = async ( data, event ) => {
+		// prevent form submit
 		event.preventDefault()
-		event.target.reset()
-
-		const result = await axios({
+		// is loading to true
+		setIsLoading(() => true )
+		setIsSuccessful(() => false )
+		// send xhr
+		await axios({
 			method : "POST",
 			data : JSON.stringify( data ),
 			url : `${URL}:${PORT}/contact/send`,
@@ -24,9 +29,31 @@ const Contact = () => {
 				'Content-Type' : 'application/json',
 			}
 		})
-
-		console.log( result )
+		// reset inputs
+		event.target.reset()
+		// is loading to false
+		setIsLoading(() => false )
+		setIsSuccessful(() => true )
 	}
+
+	if ( isLoading ) {
+		return(
+			<TemplateDefault>
+				<div className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight : "80vh" }}>
+					<div>
+						<div className="spinner-grow text-primary" role="status">
+							<span className="sr-only">Loading...</span>
+						</div>
+					</div>
+					<div className=" pt-4 text-center">Preparing SMTP and sending your message in a few seconds ... </div>
+					<div className="col-5 mx-auto my-3">
+						<AccentLine/>
+					</div>
+				</div>
+			</TemplateDefault>
+		)
+	}
+
 	return (
 		<Fragment>
 			<TemplateDefault>
@@ -40,7 +67,8 @@ const Contact = () => {
 						<div className="my-4">
 							<SocialMediaList />
 						</div>
-						<form className="d-flex flex-column contact-form" onSubmit={ handleSubmit( handleOnSubmit ) }>
+						{ isSuccessful && <p className="text-center">Thank you for waiting, your message has been successfully sent!</p>}
+						<form className={ isSuccessful ? "d-none" : "d-flex flex-column contact-form" } onSubmit={ handleSubmit( handleOnSubmit ) }>
 							<div className="form-group">
 								<input
 									className="form-control"
@@ -83,7 +111,11 @@ const Contact = () => {
 								/>
 								{ errors.message && <div className="text-left text-danger small pl-4 pt-2">{ errors.message.message }</div> }
 							</div>
-							<input className="btn btn-primary btn-block " type="submit" value="send message" />
+							<input
+								className="btn btn-primary btn-block "
+								type="submit"
+								value="send message"
+							/>
 						</form>
 					</div>
 				</div>
