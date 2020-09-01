@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react"
-import axios from 'axios'
+import axios from "axios"
 import { useForm } from "react-hook-form"
 import TemplateDefault from "../component/template.default"
 import SocialMediaList from "../component/social.media.list"
