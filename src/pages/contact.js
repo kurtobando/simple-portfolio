@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import TemplateDefault from "../component/template.default"
 import SocialMediaList from "../component/social.media.list"
 import AccentLine from "../component/accent.line"
+import regexPatterns from "../helper/regex.pattern"
 
 const Contact = () => {
 	const { errors, register, handleSubmit } = useForm({ mode: 'onSubmit', reValidateMode : 'onSubmit' })
@@ -77,7 +78,11 @@ const Contact = () => {
 									name="name"
 									ref={
 										register({
-											required : "name is required"
+											required : "name is required",
+											pattern : {
+												value : regexPatterns.onlyLettersAndNumbersWithSpace(),
+												message : "make sure your name contains letters, numbers, and space only."
+											}
 										})
 									}
 								/>
@@ -91,7 +96,11 @@ const Contact = () => {
 									name="email"
 									ref={
 										register({
-											required : "email address is required"
+											required : "email address is required",
+											pattern : {
+												value : regexPatterns.emailAddress(),
+												message : "make sure your email address is valid."
+											}
 										})
 									}
 								/>
@@ -105,7 +114,11 @@ const Contact = () => {
 									name="message"
 									ref={
 										register({
-											required : "message is required"
+											required : "message is required",
+											pattern : {
+												value : regexPatterns.onlyLettersNumbersSpaceCommasPeriods(),
+												message : "make sure your message contains letters, numbers, and space only."
+											}
 										})
 									}
 								/>
