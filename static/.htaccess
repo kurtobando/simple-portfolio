@@ -1,0 +1,2 @@
+# Redirect to 404 Gatsby page
+ErrorDocument 404 /404/
