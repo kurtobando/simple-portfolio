@@ -13,13 +13,17 @@ Make sure to create `.env.production` or `.env.development`
 and copy these `GATSBY_` variables below:
 
 ```
-GATSBY_EXPRESS_URL=http://localhost
-GATSBY_EXPRESS_PORT=4000`
+GATSBY_API_URL=http://localhost
+GATSBY_API_PORT=4000
 ```
 Then separate `.env` for these remaining variables below:
 Express JS
 ```
+EXPRESS_URL=http://localhost
 EXPRESS_PORT=4000
+EXPRESS_IS_HTTPS=false
+EXPRESS_CERT=null
+EXPRESS_KEY=null
 ```
 
 Node Mailer
