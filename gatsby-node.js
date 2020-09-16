@@ -4,10 +4,10 @@ module.exports.onCreateNode = ({ node, actions }) => {
 	const { createNode, createNodeField } = actions
 
 	if ( node.internal.type === "MarkdownRemark" ) {
-		const file 		= node.fileAbsolutePath
-		const basename 	= path.basename( file )
-		const ext 		= path.extname( file )
-		const slug 		= basename.replace( ext, '')
+		const file      = node.fileAbsolutePath
+		const basename  = path.basename( file )
+		const ext       = path.extname( file )
+		const slug      = basename.replace( ext, '')
 
 		createNodeField({
 			node,
@@ -21,8 +21,8 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions
-	const template 		 = path.resolve('./src/component/template.project.js')
-	const slugs			 = await graphql(`
+	const template       = path.resolve('./src/component/template.project.js')
+	const slugs          = await graphql(`
         query{
 			allMarkdownRemark {
 				nodes {
@@ -46,11 +46,11 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
 	slugs.data.allMarkdownRemark.nodes.forEach(( value ) => {
 		createPage({
-			component : template,
-			path : `/project/${ value.fields.slug }`,
-			context : {
-				slug : value.fields.slug,
-				data : value
+			component: template,
+			path: `/project/${ value.fields.slug }`,
+			context: {
+				slug: value.fields.slug,
+				data: value
 			}
 		})
 	})
