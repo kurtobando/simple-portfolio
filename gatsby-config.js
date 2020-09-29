@@ -3,6 +3,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require('dotenv').config()
+
+const GOOGLE_ANALYTICS_TRACKING_ID = process.env.GOOGLE_ANALYTICS_TRACKING_ID || null
 
 module.exports = {
     /* Your site config here */
@@ -15,6 +18,14 @@ module.exports = {
         dribble: `https://dribbble.com/kurtobando`
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
+                head: true,
+                defer: false,
+            }
+        },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         {
