@@ -8,7 +8,6 @@ Visit [kurtobando.com](https://kurtobando.com)
 
 
 ---
-##### Reminder to myself
 Make sure to create `.env.production` or `.env.development`
 and copy these `GATSBY_` variables below:
 
@@ -36,4 +35,9 @@ NODEMAILER_HOST=localhost
 NODEMAILER_PORT=587
 NODEMAILER_SECURE=false
 NODEMAILER_RECIPIENT=recipient@localhost
+```
+
+Google Analytics
+```
+GOOGLE_ANALYTICS_TRACKING_ID=UA-XXXXXXXXX-X
 ```
