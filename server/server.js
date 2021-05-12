@@ -13,7 +13,7 @@ const cors          = require('cors')
 const fs            = require('fs')
 const app           = express()
 
-const server = IS_HTTPS ?
+const server = IS_HTTPS == true ?
 	require('https').createServer({
 		key : fs.readFileSync( KEY ),
 		cert : fs.readFileSync( CERT )
