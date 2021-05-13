@@ -3,9 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-require('dotenv').config()
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`
+})
 
-const GOOGLE_ANALYTICS_TRACKING_ID = process.env.GOOGLE_ANALYTICS_TRACKING_ID || null
+const GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || null
 
 module.exports = {
     /* Your site config here */
