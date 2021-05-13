@@ -1,5 +1,5 @@
-require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
 })
 
 const GATSBY_GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || "REPLACE_GOOGLE_ANALYTICS_ID"
@@ -17,7 +17,7 @@ module.exports = {
         author: GATSBY_SITE_AUTHOR,
         github: GATSBY_URL_GITHUB,
         linkedIn: GATSBY_URL_DRIBBLE,
-        dribble: GATSBY_URL_LINKEDIN
+        dribble: GATSBY_URL_LINKEDIN,
     },
     plugins: [
         {
@@ -26,7 +26,7 @@ module.exports = {
                 trackingId: GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
                 head: true,
                 defer: false,
-            }
+            },
         },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
@@ -35,7 +35,7 @@ module.exports = {
             options: {
                 name: `markdown`,
                 path: `${__dirname}/src/markdown/`,
-            }
+            },
         },
         {
             resolve: `gatsby-transformer-remark`,
@@ -45,7 +45,7 @@ module.exports = {
                 pedantic: true,
                 gfm: true,
                 plugins: [],
-            }
+            },
         },
     ],
 }

@@ -18,7 +18,7 @@ const regexPatterns = {
     emailAddress() {
         // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
         return /[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/
-    }
+    },
 }
 
 export default regexPatterns
