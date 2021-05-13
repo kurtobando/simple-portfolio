@@ -11,7 +11,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "server": "node server/server.js",
-    "dev-server": "nodemon server/server.js",
+    "dev-server": "NODE_ENV=development nodemon server/server.js",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
