@@ -2,7 +2,7 @@
 title: Simple Chat
 description: A chat application that allow user to create "public" and "private" rooms, with privacy in mind.
 reason: To learn GatsbyJS, NodeJS, MongooseJS, and socket.io
-technologies: html,css,javascript,socket
+technologies: html,css,javascript,websockets
 image: https://simple-chat.kurtobando.com/preview.png
 repository: https://github.com/kurtobando/simple-chat
 ---
