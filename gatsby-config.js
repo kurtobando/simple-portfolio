@@ -1,29 +1,29 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
 })
 
-const GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || null
+const GATSBY_GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || "REPLACE_GOOGLE_ANALYTICS_ID"
+const GATSBY_SITE_TITLE = process.env.GATSBY_SITE_TITLE || "REPLACE_SITE_TITLE"
+const GATSBY_SITE_DESCRIPTION = process.env.GATSBY_SITE_DESCRIPTION || "REPLACE_SITE_DESCRIPTION"
+const GATSBY_SITE_AUTHOR = process.env.GATSBY_SITE_AUTHOR || "REPLACE_SITE_AUTHOR"
+const GATSBY_URL_GITHUB = process.env.GATSBY_URL_GITHUB || "REPLACE_URL_GITHUB"
+const GATSBY_URL_DRIBBLE = process.env.GATSBY_URL_DRIBBLE || "REPLACE_URL_DRIBBLE"
+const GATSBY_URL_LINKEDIN = process.env.GATSBY_URL_LINKEDIN || "REPLACE_URL_LINKEDIN"
 
 module.exports = {
-    /* Your site config here */
     siteMetadata: {
-        title: `Hey! I’m Kurt.`,
-        description: `a frontend developer who enjoy the experience working with JavaScript, and travel during spare time.`,
-        author: `kurt obando`,
-        github: `https://github.com/kurtobando`,
-        linkedIn: `https://www.linkedin.com/in/kurt-obando/`,
-        dribble: `https://dribbble.com/kurtobando`
+        title: GATSBY_SITE_TITLE,
+        description: GATSBY_SITE_DESCRIPTION,
+        author: GATSBY_SITE_AUTHOR,
+        github: GATSBY_URL_GITHUB,
+        linkedIn: GATSBY_URL_DRIBBLE,
+        dribble: GATSBY_URL_LINKEDIN
     },
     plugins: [
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: GOOGLE_ANALYTICS_TRACKING_ID,
+                trackingId: GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
                 head: true,
                 defer: false,
             }
