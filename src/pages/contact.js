@@ -8,33 +8,37 @@ import regexPatterns from "../helper/regex.pattern"
 
 const Contact = () => {
     const { errors, register, handleSubmit } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" })
-    const URL = process.env.GATSBY_EXPRESS_URL
-    const PORT = process.env.GATSBY_EXPRESS_PORT
+    const URL = process.env.GATSBY_API_URL
+    const PORT = process.env.GATSBY_API_PORT
 
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccessful, setIsSuccessful] = useState(false)
 
     const handleOnSubmit = async (data, event) => {
-        // prevent form submit
-        event.preventDefault()
-        // is loading to true
-        setIsLoading(() => true)
-        setIsSuccessful(() => false)
-        // send xhr
-        await axios({
-            method: "POST",
-            data: JSON.stringify(data),
-            url: `${URL}:${PORT}/contact/send`,
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-        })
-        // reset inputs
-        event.target.reset()
-        // is loading to false
-        setIsLoading(() => false)
-        setIsSuccessful(() => true)
+        try {
+            // prevent form submit
+            event.preventDefault()
+            // is loading to true
+            setIsLoading(() => true)
+            setIsSuccessful(() => false)
+            // send xhr
+            await axios({
+                method: "POST",
+                data: JSON.stringify(data),
+                url: `${URL}:${PORT}/contact/send`,
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+            })
+            // reset inputs
+            event.target.reset()
+            // is loading to false
+            setIsLoading(() => false)
+            setIsSuccessful(() => true)
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     if (isLoading) {
