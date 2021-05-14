@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import TemplateDefault from "../component/template.default"
-import { TechnologiesList } from "../pages/project"
+import TechnologiesList from "./technologies.list"
 
 const TemplateProject = (props) => {
     const technologies = props.pageContext.data.frontmatter.technologies.split(",")
