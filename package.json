@@ -1,9 +1,8 @@
 {
   "name": "kurtobando",
-  "private": true,
   "description": "A simple portfolio for kurtobando.com",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -43,5 +42,8 @@
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "prettier": "2.0.5"
-  }
+  },
+  "repository": "git@github.com:kurtobando/kurtobando.git",
+  "author": "Kurt Obando <kurtobando.developer@gmail.com>",
+  "main": "index.js"
 }
