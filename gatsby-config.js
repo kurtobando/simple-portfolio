@@ -2,10 +2,11 @@ require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-const GATSBY_GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || "REPLACE_GOOGLE_ANALYTICS_ID"
+const GATSBY_GOOGLE_ANALYTICS_TRACKING_ID = process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID || "REPLACE_ANALYTICS_ID"
 const GATSBY_SITE_TITLE = process.env.GATSBY_SITE_TITLE || "REPLACE_SITE_TITLE"
 const GATSBY_SITE_DESCRIPTION = process.env.GATSBY_SITE_DESCRIPTION || "REPLACE_SITE_DESCRIPTION"
 const GATSBY_SITE_AUTHOR = process.env.GATSBY_SITE_AUTHOR || "REPLACE_SITE_AUTHOR"
+const GATSBY_SITE_URL = process.env.GATSBY_SITE_URL || "REPLACE_SITE_URL"
 const GATSBY_URL_GITHUB = process.env.GATSBY_URL_GITHUB || "REPLACE_URL_GITHUB"
 const GATSBY_URL_DRIBBLE = process.env.GATSBY_URL_DRIBBLE || "REPLACE_URL_DRIBBLE"
 const GATSBY_URL_LINKEDIN = process.env.GATSBY_URL_LINKEDIN || "REPLACE_URL_LINKEDIN"
@@ -15,6 +16,7 @@ module.exports = {
         title: GATSBY_SITE_TITLE,
         description: GATSBY_SITE_DESCRIPTION,
         author: GATSBY_SITE_AUTHOR,
+        siteUrl: GATSBY_SITE_URL,
         github: GATSBY_URL_GITHUB,
         linkedIn: GATSBY_URL_DRIBBLE,
         dribble: GATSBY_URL_LINKEDIN,
@@ -47,5 +49,6 @@ module.exports = {
                 plugins: [],
             },
         },
+        `gatsby-plugin-advanced-sitemap`,
     ],
 }
