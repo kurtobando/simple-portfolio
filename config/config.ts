@@ -1,0 +1,5 @@
+export const GOOGLE_ANALYTICS_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
+export const SITE_TITLE = process.env.NEXT_PUBLIC_SITE_TITLE
+export const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION
+export const SITE_AUTHOR = process.env.NEXT_PUBLIC_SITE_AUTHOR
