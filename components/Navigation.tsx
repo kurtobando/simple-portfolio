@@ -8,18 +8,18 @@ export default function Navigation() {
     }
 
     return (
-        <ul>
-            <li>
+        <ul className="flex flex-row">
+            <li className="ml-4">
                 <Link href={URL.HOME}>
                     <a className="hover:underline">about</a>
                 </Link>
             </li>
-            <li>
+            <li className="ml-4">
                 <Link href={URL.PROJECTS}>
                     <a className="hover:underline">projects</a>
                 </Link>
             </li>
-            <li>
+            <li className="ml-4">
                 <Link href={URL.CONTACT}>
                     <a className="hover:underline">contact</a>
                 </Link>
