@@ -1,5 +1,5 @@
-import Layout from "../components/layout"
-import SocialMedia from "../components/social-media"
+import Layout from "../components/Layout"
+import SocialMediaList from "../components/SocialMediaList"
 
 export default function Home() {
     return (
@@ -9,7 +9,7 @@ export default function Home() {
                 <p>
                     a frontend developer who enjoy the experience working with JavaScript, and travel during spare time.
                 </p>
-                <SocialMedia />
+                <SocialMediaList />
             </Layout>
         </div>
     )

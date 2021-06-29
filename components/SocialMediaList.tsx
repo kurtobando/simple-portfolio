@@ -1,4 +1,4 @@
-export default function SocialMedia() {
+export default function SocialMediaList() {
     return (
         <div>
             <ul>
