@@ -1,4 +1,5 @@
 import Link from "next/link"
+import styles from "./Navigation.module.css"
 
 export default function Navigation() {
     const URL = {
@@ -8,20 +9,20 @@ export default function Navigation() {
     }
 
     return (
-        <ul className="flex flex-row">
-            <li className="ml-4">
+        <ul className={styles.Navigation}>
+            <li>
                 <Link href={URL.HOME}>
-                    <a className="hover:underline">about</a>
+                    <a>about</a>
                 </Link>
             </li>
-            <li className="ml-4">
+            <li>
                 <Link href={URL.PROJECTS}>
-                    <a className="hover:underline">projects</a>
+                    <a>projects</a>
                 </Link>
             </li>
-            <li className="ml-4">
+            <li>
                 <Link href={URL.CONTACT}>
-                    <a className="hover:underline">contact</a>
+                    <a>contact</a>
                 </Link>
             </li>
         </ul>
