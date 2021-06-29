@@ -3,7 +3,7 @@ import Navigation from "./Navigation"
 import styles from "./Layout.module.css"
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_AUTHOR } from "../config/config"
 
-export default function Layout({ children }) {
+export default function Layout({ children }): JSX.Element {
     return (
         <>
             <Head>

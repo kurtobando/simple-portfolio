@@ -1,7 +1,7 @@
 import Layout from "../components/Layout"
 import SocialMediaList from "../components/SocialMediaList"
 
-export default function Home() {
+export default function Home(): JSX.Element {
     return (
         <div>
             <Layout>

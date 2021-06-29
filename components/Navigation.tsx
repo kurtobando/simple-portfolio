@@ -1,7 +1,7 @@
 import Link from "next/link"
 import styles from "./Navigation.module.css"
 
-export default function Navigation() {
+export default function Navigation(): JSX.Element {
     const URL = {
         HOME: `/`,
         PROJECTS: `/projects`,

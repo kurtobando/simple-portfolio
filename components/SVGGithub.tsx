@@ -1,4 +1,9 @@
-export default function SVGGithub({ width = "24px", height = "24px" }) {
+interface Props {
+    width?: string
+    height?: string
+}
+
+export default function SVGGithub({ width = "24px", height = "24px" }: Props): JSX.Element {
     const styles = {
         width: width,
         height: height,
