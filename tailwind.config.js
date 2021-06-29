@@ -1,11 +1,23 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    purge: [],
+    darkMode: false,
+    theme: {
+        fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+            serif: ["Poppins", "sans-serif"],
+            mono: ["Poppins", "sans-serif"],
+            body: ["Poppins", "sans-serif"],
+        },
+        colors: {
+            primary: "#209CEE",
+            secondary: "#EE7220",
+            tertiary: "#F7BD96",
+            dark: "#252525",
+        },
+        extend: {},
+    },
+    variants: {
+        extend: {},
+    },
+    plugins: [],
 }
