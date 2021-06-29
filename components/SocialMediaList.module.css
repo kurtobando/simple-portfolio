@@ -1,0 +1,10 @@
+.SocialMediaList {
+}
+
+.SocialMediaList ul {
+    @apply flex flex-row;
+}
+
+.SocialMediaList ul li {
+    @apply mr-6;
+}
