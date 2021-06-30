@@ -1,0 +1,33 @@
+.ContactForm {
+    @apply mx-auto;
+    max-width: 500px;
+}
+
+.ContactForm form {
+    @apply flex flex-col;
+}
+
+.ContactForm form input,
+.ContactForm form textarea {
+    @apply border border-solid border-dark border-opacity-30;
+    @apply rounded;
+    @apply p-2 my-1;
+    @apply flex flex-row;
+    @apply w-full;
+}
+
+.ContactForm form input:hover,
+.ContactForm form textarea:hover {
+    @apply border border-solid border-primary border-opacity-100;
+}
+
+.ContactForm form input[type="button"] {
+    @apply bg-dark;
+    @apply p-3;
+    color: #ffffff;
+    border: none !important;
+}
+
+.ContactForm form input[type="button"]:hover {
+    @apply bg-primary;
+}
