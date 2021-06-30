@@ -3,10 +3,11 @@
 
 .SocialMediaList ul {
     @apply flex flex-row;
+    @apply justify-center;
 }
 
 .SocialMediaList ul li {
-    @apply mr-6;
+    @apply mx-3;
 }
 
 .SocialMediaList ul li a:hover {
