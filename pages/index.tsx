@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
                                 spare time.
                             </p>
                         </div>
-                        <div className="mx-auto py-4">
+                        <div className="py-4">
                             <SocialMediaList />
                         </div>
                     </div>
