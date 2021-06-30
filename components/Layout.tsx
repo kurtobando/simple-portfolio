@@ -13,7 +13,7 @@ export default function Layout({ children }): JSX.Element {
             </Head>
             <div className={styles.Layout}>
                 <div className={styles.BrandWithNavigation}>
-                    <div className="py-4 font-bold">kurtobando</div>
+                    {/* <div className="py-4 font-bold">kurtobando</div> */}
                     <Navigation />
                 </div>
                 <div>{children}</div>
