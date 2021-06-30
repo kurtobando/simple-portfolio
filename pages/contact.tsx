@@ -1,5 +1,6 @@
 import Layout from "../components/Layout"
 import SocialMediaList from "../components/SocialMediaList"
+import ContactForm from "../components/ContactForm"
 
 export default function Contact(): JSX.Element {
     return (
@@ -18,8 +19,10 @@ export default function Contact(): JSX.Element {
                     <div className="py-4">
                         <SocialMediaList />
                     </div>
+                    <div className="mt-5">
+                        <ContactForm />
+                    </div>
                 </div>
-                <div></div>
             </Layout>
         </div>
     )
