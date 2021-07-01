@@ -21,13 +21,19 @@
     @apply border border-solid border-primary border-opacity-100;
 }
 
-.ContactForm form input[type="button"] {
+.ContactForm form input[type="submit"] {
     @apply bg-dark;
     @apply p-3;
     color: #ffffff;
     border: none !important;
 }
 
-.ContactForm form input[type="button"]:hover {
+.ContactForm form input[type="submit"]:hover {
     @apply bg-primary;
+}
+
+.ContactForm form span {
+    @apply block;
+    @apply text-sm;
+    color: red;
 }
