@@ -17,6 +17,9 @@ export default function ContactForm(): JSX.Element {
         EMAIL_ADDRESS: `email_address`,
     }
 
+    const [name, setName] = useState<string>("")
+    const [emailAddress, setEmailAddress] = useState<string>("")
+    const [message, setMessage] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [hasData, setHasData] = useState<object>({})
     const [hasError, setHasError] = useState<object>({})
@@ -29,25 +32,34 @@ export default function ContactForm(): JSX.Element {
 
     const onSubmit = async (formData, event) => {
         event.preventDefault()
-        setIsLoading(true)
 
-        const { data = {}, status, statusText } = await axios.post(`/api/contact`, formData)
+        try {
+            setIsLoading(true)
 
-        if (status !== 200 || statusText !== "OK") {
+            const { data = {}, status, statusText } = await axios.post(`/api/contact`, formData)
+
             setIsLoading(false)
-            setHasError({ message: `Opps.. something went wrong` })
-            return false
+            setHasData(data)
+
+            setName("")
+            setEmailAddress("")
+            setMessage("")
+        } catch (error) {
+            // handle error 400
+            const {
+                response: {
+                    data: { message },
+                },
+            } = error
+
+            setIsLoading(false)
+            setHasError({ message })
+
+            setTimeout(() => {
+                setHasError({})
+            }, 2000)
         }
 
-        setIsLoading(false)
-        setHasData(data)
-        return false
-    }
-
-    const onError = (error, event) => {
-        event.preventDefault()
-        console.log({ error })
-        setHasError({ message: `Opps.. something went wrong` })
         return false
     }
 
@@ -62,7 +74,7 @@ export default function ContactForm(): JSX.Element {
     if (Object.keys(hasData).length) {
         setTimeout(() => {
             setHasData({})
-        }, 1500)
+        }, 5000)
 
         return <div>{hasData?.message}</div>
     }
@@ -75,6 +87,7 @@ export default function ContactForm(): JSX.Element {
                         type="text"
                         placeholder="name"
                         {...register(FORM_NAMES.NAME, {
+                            value: name,
                             required: `${FORM_NAMES.NAME} is required`,
                             minLength: {
                                 value: 3,
@@ -85,14 +98,16 @@ export default function ContactForm(): JSX.Element {
                                 message: `${FORM_NAMES.NAME} is too long`,
                             },
                         })}
+                        onChange={(event) => setName(event.currentTarget.value)}
                     />
                     <ErrorMessage name={FORM_NAMES.NAME} as={`span`} errors={errors} />
                 </div>
                 <div>
                     <input
-                        type="text"
+                        type="email"
                         placeholder="email address"
                         {...register(FORM_NAMES.EMAIL_ADDRESS, {
+                            value: emailAddress,
                             required: `${FORM_NAMES.EMAIL_ADDRESS.replace("_", " ")} is required`,
                             minLength: {
                                 value: 5,
@@ -103,6 +118,7 @@ export default function ContactForm(): JSX.Element {
                                 message: `${FORM_NAMES.EMAIL_ADDRESS.replace("_", " ")} is too long`,
                             },
                         })}
+                        onChange={(event) => setEmailAddress(event.currentTarget.value)}
                     />
                     <ErrorMessage name={FORM_NAMES.EMAIL_ADDRESS} as={`span`} errors={errors} />
                 </div>
@@ -112,6 +128,7 @@ export default function ContactForm(): JSX.Element {
                         cols={30}
                         rows={5}
                         {...register(FORM_NAMES.MESSAGE, {
+                            value: message,
                             required: `${FORM_NAMES.MESSAGE} is required`,
                             minLength: {
                                 value: 5,
@@ -122,6 +139,7 @@ export default function ContactForm(): JSX.Element {
                                 message: `${FORM_NAMES.MESSAGE} is too long`,
                             },
                         })}
+                        onChange={(event) => setMessage(event.currentTarget.value)}
                     />
                     <ErrorMessage name={FORM_NAMES.MESSAGE} as={`span`} errors={errors} />
                 </div>
