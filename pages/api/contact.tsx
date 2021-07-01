@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next"
 import validator from "validator"
+import fs from "fs"
 
 interface formData {
     name: string
@@ -10,6 +11,11 @@ interface formData {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { name = "", email_address = "", message = "" }: formData = req.body
+
+    fs.appendFileSync(
+        "contact-logs.logs",
+        `${new Date()}{ "name": "${name}", "email": "${email_address}", "message": "${message}" } \n`
+    )
 
     if (req.method === "GET") {
         return res.status(403).json({ message: `GET request declined` })
