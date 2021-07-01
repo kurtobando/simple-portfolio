@@ -28,7 +28,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     if (!validator.isEmail(email_address.trim())) {
-        return res.status(400).json({ message: `Bad Request` })
+        return res.status(400).json({ message: `${email_address} is not a valid email address` })
     }
 
     res.status(200).json({ message: "Message sent!" })
