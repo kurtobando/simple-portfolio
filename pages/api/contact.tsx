@@ -13,7 +13,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { name = "", email_address = "", message = "" }: formData = req.body
 
     fs.appendFileSync(
-        "contact-logs.logs",
+        "./public/contact.logs",
         `${new Date()}{ "name": "${name}", "email": "${email_address}", "message": "${message}" } \n`
     )
 
