@@ -68,7 +68,7 @@ export default function ContactForm(): JSX.Element {
     }
 
     if (Object.keys(hasError).length) {
-        return <div>{hasError?.message}</div>
+        return <div>{hasError["message"]}</div>
     }
 
     if (Object.keys(hasData).length) {
@@ -76,7 +76,7 @@ export default function ContactForm(): JSX.Element {
             setHasData({})
         }, 5000)
 
-        return <div>{hasData?.message}</div>
+        return <div>{hasData["message"]}</div>
     }
 
     return (
