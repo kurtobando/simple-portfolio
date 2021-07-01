@@ -1,3 +1,5 @@
+import axios from "axios"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
 import styles from "./ContactForm.module.css"
@@ -15,20 +17,54 @@ export default function ContactForm(): JSX.Element {
         EMAIL_ADDRESS: `email_address`,
     }
 
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [hasData, setHasData] = useState<object>({})
+    const [hasError, setHasError] = useState<object>({})
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data, event) => {
+    const onSubmit = async (formData, event) => {
         event.preventDefault()
-        console.log({ data })
+        setIsLoading(true)
+
+        const { data = {}, status, statusText } = await axios.post(`/api/contact`, formData)
+
+        if (status !== 200 || statusText !== "OK") {
+            setIsLoading(false)
+            setHasError({ message: `Opps.. something went wrong` })
+            return false
+        }
+
+        setIsLoading(false)
+        setHasData(data)
+        return false
     }
 
     const onError = (error, event) => {
         event.preventDefault()
         console.log({ error })
+        setHasError({ message: `Opps.. something went wrong` })
+        return false
+    }
+
+    if (isLoading) {
+        return <div>sending message... please wait</div>
+    }
+
+    if (Object.keys(hasError).length) {
+        return <div>{hasError?.message}</div>
+    }
+
+    if (Object.keys(hasData).length) {
+        setTimeout(() => {
+            setHasData({})
+        }, 1500)
+
+        return <div>{hasData?.message}</div>
     }
 
     return (
