@@ -40,8 +40,8 @@ export default function Projects({ projects }): JSX.Element {
                 <div className="flex flex-row flex-wrap">
                     {projects.map((project: Project): JSX.Element => {
                         return (
-                            <div className="p-2 w-full md:w-1/2">
-                                <div key={project.node.id} className={`${styles.Project} p-4`}>
+                            <div key={project.node.id} className="p-2 w-full md:w-1/2">
+                                <div className={`${styles.Project} p-4`}>
                                     <Link href={project.node.uri}>
                                         <a className={styles.Title}>
                                             <h2>{project.node.title}</h2>
