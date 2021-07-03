@@ -14,3 +14,5 @@ export const NODEMAILER_HOST: string = process.env.NODEMAILER_HOST
 export const NODEMAILER_PORT: string = process.env.NODEMAILER_PORT
 export const NODEMAILER_SECURE: string = process.env.NODEMAILER_SECURE
 export const NODEMAILER_RECIPIENT: string = process.env.NODEMAILER_RECIPIENT
+
+export const GRAPHQL_URL: string = process.env.GRAPHQL_URL
