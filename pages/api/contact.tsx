@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import validator from "validator"
 import fs from "fs"
+import mailer from "../../lib/mailer"
 
 interface formData {
     name: string
@@ -37,5 +38,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         return res.status(400).json({ message: `${email_address} is not a valid email address` })
     }
 
-    res.status(200).json({ message: "Message sent!" })
+    mailer({ name, message, email: email_address })
+        .then((data) => {
+            fs.appendFileSync("./public/contact.logs", `${new Date()}{ "nodemailer": ${JSON.stringify(data)} } \n`)
+            return res.status(200).json({ message: "Message sent!" })
+        })
+        .catch((error) => {
+            fs.appendFileSync("./public/contact.logs", `${new Date()}{ "nodemailer": ${JSON.stringify(error)} } \n`)
+            return res.status(200).json({ message: "Message sent!" })
+        })
 }
