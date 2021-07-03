@@ -1,9 +1,30 @@
 .Project {
+    @apply border border-dark border-opacity-10;
+    @apply rounded;
+    @apply p-4 m-2;
 }
 
-.Project .Title {
+.Project:hover {
+    @apply border border-primary border-opacity-100;
+}
+
+.Project:hover .Title,
+.Project:hover .Excerpt {
+    @apply text-primary;
+}
+
+.Project:hover .Title {
     @apply underline;
 }
 
+.Project .Title {
+    @apply block;
+    @apply font-bold;
+    @apply pb-2;
+    color: inherit;
+}
+
 .Project .Excerpt {
+    @apply text-sm;
+    color: inherit;
 }
