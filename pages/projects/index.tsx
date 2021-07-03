@@ -1,8 +1,9 @@
 import axios from "axios"
 import Link from "next/link"
 import { GetStaticProps } from "next"
-import Layout from "../components/Layout"
-import { GRAPHQL_URL } from "../config/config"
+import Layout from "../../components/Layout"
+import { GRAPHQL_URL } from "../../config/config"
+import styles from "./Project.module.css"
 
 type ProjectNode = {
     id: string
@@ -38,13 +39,16 @@ export default function Projects({ projects }): JSX.Element {
             <Layout>
                 {projects.map((project: Project): JSX.Element => {
                     return (
-                        <div key={project.node.id}>
+                        <div key={project.node.id} className={styles.Project}>
                             <Link href={project.node.uri}>
-                                <a>
+                                <a className={styles.Title}>
                                     <h2>{project.node.title}</h2>
                                 </a>
                             </Link>
-                            <div dangerouslySetInnerHTML={{ __html: project.node.excerpt }} />
+                            <div
+                                className={styles.Excerpt}
+                                dangerouslySetInnerHTML={{ __html: project.node.excerpt }}
+                            />
                         </div>
                     )
                 })}

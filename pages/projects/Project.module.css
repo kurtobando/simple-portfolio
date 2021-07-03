@@ -1,0 +1,9 @@
+.Project {
+}
+
+.Project .Title {
+    @apply underline;
+}
+
+.Project .Excerpt {
+}
