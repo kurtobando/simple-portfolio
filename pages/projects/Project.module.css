@@ -1,7 +1,6 @@
 .Project {
     @apply border border-dark border-opacity-10;
     @apply rounded;
-    @apply p-4 m-2;
 }
 
 .Project:hover {

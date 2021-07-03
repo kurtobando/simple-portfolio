@@ -37,21 +37,25 @@ export default function Projects({ projects }): JSX.Element {
     return (
         <div>
             <Layout>
-                {projects.map((project: Project): JSX.Element => {
-                    return (
-                        <div key={project.node.id} className={styles.Project}>
-                            <Link href={project.node.uri}>
-                                <a className={styles.Title}>
-                                    <h2>{project.node.title}</h2>
-                                </a>
-                            </Link>
-                            <div
-                                className={styles.Excerpt}
-                                dangerouslySetInnerHTML={{ __html: project.node.excerpt }}
-                            />
-                        </div>
-                    )
-                })}
+                <div className="flex flex-row flex-wrap">
+                    {projects.map((project: Project): JSX.Element => {
+                        return (
+                            <div className="p-2 w-full md:w-1/2">
+                                <div key={project.node.id} className={`${styles.Project} p-4`}>
+                                    <Link href={project.node.uri}>
+                                        <a className={styles.Title}>
+                                            <h2>{project.node.title}</h2>
+                                        </a>
+                                    </Link>
+                                    <div
+                                        className={styles.Excerpt}
+                                        dangerouslySetInnerHTML={{ __html: project.node.excerpt }}
+                                    />
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </Layout>
         </div>
     )
