@@ -2,6 +2,7 @@ import axios from "axios"
 import { GetStaticPaths, GetStaticProps } from "next"
 import Layout from "../../components/Layout"
 import { GRAPHQL_URL } from "../../config/config"
+import styles from "./Project.module.css"
 
 function fetchProjectsSlug(): string {
     return `query fetchProjectsSlug {
@@ -29,8 +30,10 @@ export default function ProjectSlug({ project }): JSX.Element {
 
     return (
         <Layout>
-            <div>
-                <div>{title}</div>
+            <div className={styles.Project_Details}>
+                <div>
+                    <h2>{title}</h2>
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
         </Layout>

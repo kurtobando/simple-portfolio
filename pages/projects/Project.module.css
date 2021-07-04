@@ -1,3 +1,4 @@
+/* styles in /projects/index.tsx */
 .Project {
     @apply border border-dark border-opacity-10;
     @apply rounded;
@@ -26,4 +27,41 @@
 .Project .Excerpt {
     @apply text-sm;
     color: inherit;
+}
+
+/* styles in /projects/[slug].tsx */
+.Project_Details {
+    @apply break-words;
+}
+
+.Project_Details h1,
+.Project_Details h2,
+.Project_Details h3,
+.Project_Details h4,
+.Project_Details h5,
+.Project_Details h6 {
+    @apply font-bold;
+}
+
+.Project_Details h2 {
+    @apply text-xl;
+}
+
+.Project_Details p {
+    @apply font-light text-sm;
+    @apply my-2;
+    @apply leading-relaxed;
+}
+
+.Project_Details a {
+    @apply underline hover:text-primary;
+}
+
+.Project_Details pre {
+    @apply break-all whitespace-normal;
+    @apply p-2 my-2;
+    @apply rounded-sm;
+    @apply font-light text-sm;
+    color: #ffffff;
+    @apply bg-dark;
 }
