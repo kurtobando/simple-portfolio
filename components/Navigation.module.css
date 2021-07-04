@@ -14,3 +14,8 @@
     @apply border-b-4 border-primary;
     @apply text-primary;
 }
+
+.Navigation li a.isCurrentPath {
+    @apply border-b-4 border-primary;
+    @apply text-primary;
+}
