@@ -32,6 +32,7 @@
 /* styles in /projects/[slug].tsx */
 .Project_Details {
     @apply break-words;
+    @apply my-20;
 }
 
 .Project_Details h1,
@@ -41,6 +42,7 @@
 .Project_Details h5,
 .Project_Details h6 {
     @apply font-bold;
+    @apply mt-4;
 }
 
 .Project_Details h2 {
