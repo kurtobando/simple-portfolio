@@ -60,10 +60,11 @@
 }
 
 .Project_Details pre {
-    @apply break-all whitespace-normal;
-    @apply p-2 my-2;
+    @apply p-4 my-2;
     @apply rounded-sm;
-    @apply font-light text-sm;
-    color: #ffffff;
+    @apply text-xs;
     @apply bg-dark;
+    @apply overflow-scroll;
+    font-family: "Roboto Slab", serif;
+    color: #ffffff;
 }

@@ -11,7 +11,7 @@ module.exports = {
         fontFamily: {
             sans: ["Poppins", "sans-serif"],
             serif: ["Poppins", "sans-serif"],
-            mono: ["Poppins", "sans-serif"],
+            mono: ["Roboto Mono", "sans-serif"],
             body: ["Poppins", "sans-serif"],
         },
         colors: {
