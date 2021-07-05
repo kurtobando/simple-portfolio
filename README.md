@@ -4,4 +4,4 @@ a frontend developer who enjoy the experience working with JavaScript, and trave
 
 ### Want to work together?
 
-I work best with people who are passionate about what they are working on. If you are excited about something you are making. I want to work with you.
+I work best with people who enjoy what they are working on. If you are excited about something you are making. I want to work with you.
